@@ -1,7 +1,3 @@
-.. raw:: mediawiki
-
-   {{Construction}}
-
 Plasma Mobile application development
 =====================================
 
@@ -64,7 +60,7 @@ CMake
    How-tos <https://community.kde.org/Guidelines_and_HOWTOs/CMake>`__
 
 Using the Kirigami application template
-=======================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We will use the KDE flatpak SDK to develop and package the app, so all
 that is required is a working flatpak and flatpak-builder installation.
@@ -73,23 +69,40 @@ On Debian and derivates, you can use
 ``sudo apt install flatpak flatpak-builder``.
 
 First, clone the app template:
-``git clone``\ ```https://gitlab.com/jbbgameich/plasma-mobile-app-template.git`` <https://gitlab.com/jbbgameich/plasma-mobile-app-template.git>`__
+``git clone https://gitlab.com/jbbgameich/plasma-mobile-app-template.git``
 
 This repository can be used as a template to develop Plasma Mobile
 applications. It already includes templates for the qml ui, a c++ part,
 app metadata and flatpak packaging.
 
 Local building and testing using the SDK
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
-   flatpak install flathub org.kde.Sdk//5.11 # Only needs to be done once
+   # Install the SDK
+   flatpak install flathub org.kde.Sdk # Only needs to be done once
+
+   # Build
    flatpak-builder flatpak-build-desktop --force-clean --ccache *.json
+
+   # Start
+   export QT_QUICK_CONTROLS_MOBILE=true QT_QUICK_CONTROLS_STYLE=Plasma # Required for making the application look like started on a phone
    flatpak-builder --run flatpak-build-desktop *.json hellokirigami
 
+
+If you can see this image:
+
+.. figure:: Hellokirigami.png
+   :alt: Hellokirigami.png
+   :width: 250px
+
+   Hellokirigami.png
+
+you have successfully created your first Plasma Mobile application!
+
 Creating a flatpak for the phone
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This assumes your system is already set up as described
 `here <https://community.kde.org/Guidelines_and_HOWTOs/Flatpak>`__. Make
@@ -117,7 +130,7 @@ phone using scp:
 Your new application should now appear on the homescreen.
 
 Using the template to develop your application
-----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Edit the files to fit your naming and needs. In each command, replace
 “io.you.newapp” and “newapp” with the id and name you want to use
@@ -129,7 +142,7 @@ Edit the files to fit your naming and needs. In each command, replace
    for file in $(find . -name &quot;org.kde.hellokirigami*&quot;); do mv $file $(echo $file | sed &quot;s/org.kde.hellokirigami/io.you.newapp/g&quot;); done
 
 Submitting your new application to the repository
--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once your application is working and is usable, you can submit a patch
 to include it into the KDE flatpak repository.
