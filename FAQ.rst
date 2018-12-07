@@ -1,5 +1,8 @@
+Frequently Asked Questions
+==========================
+
 Why is Plasma Mobile not using Mer/Nemomobile?
-==============================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Plasma Mobile is a software platform for mobile devices. It is not an
 operating system in of itself, it consists of Qt5, the KDE Frameworks,
@@ -9,7 +12,7 @@ time and resources, we're currently focusing on Halium as a base for
 testing and development.
 
 Can Android apps work on Plasma Mobile?
-=======================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the future, potentially, but currently no. There are projects like
 `Anbox <https://anbox.io/>`__ which are seeking to have Android apps run
@@ -19,7 +22,7 @@ running on top of a GNU/Linux system with the Plasma Mobile platform,
 but it's a complicated task, and it's not a priority right now.
 
 Can I run Plasma Mobile on my mobile device?
-============================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Currently, Plasma Mobile runs on the following device types:
 
@@ -67,7 +70,7 @@ Currently, Plasma Mobile runs on the following device types:
    instructions in the porting guide to create the manifest yourself.
 
 What are requirements of device for porting Plasma Mobile?
-==========================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  For Android based devices (ARM and x86) a Halium port is required:
 
@@ -81,7 +84,7 @@ What are requirements of device for porting Plasma Mobile?
    the x86 ISO
 
 I've installed Plasma Mobile, what is the login password?
-=========================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you've installed it onto your Nexus 5/5X via the installation script,
 the password should be "1234", and you can then change it afterwards by
@@ -92,7 +95,7 @@ default, and you'll have to set it by running "passwd" in Konsole before
 you can authenticate for anything.
 
 What's the state of the project?
-================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Plasma Mobile is currently under heavy development and is not intended
 to be used as a daily driver. For more information, check out `this page

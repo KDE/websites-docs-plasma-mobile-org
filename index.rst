@@ -15,7 +15,7 @@ that is open for the community to participate in.*"
    :caption: General
    :name: sec-general
 
-   General
+   Introduction
    FAQ
 
 .. toctree::   
