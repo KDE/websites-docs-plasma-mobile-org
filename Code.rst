@@ -49,13 +49,15 @@ General Mobile Components
 The following git modules are generally useful on mobile devices and
 provide touch-friendly functionality.
 
--  *plasma-mobile*: Components generally applicable on mobile devices.
 -  *plasma-settings*: Settings application and modules.
 -  *plasma-camera*: Camera application.
+-  *marble*: Maps application
+-  *koko*: Gallery application
+-  *vvave*: Music player
+-  *okular*: Document Viewer
+-  *discover*: Software Center
 -  *plasma-angelfish*: Proof-of-concept demo webbrowser for phones.
 -  *plasma-samegame*: Small example game, pure QML.
--  *plasma-maliit-framework*: Maliit virtual keyboard integration.
--  *plasma-maliit-plugins*: Maliit virtual keyboard integration.
 -  *mtp-server*: Fork of Ubuntu's MTP server
 
 Phone Specific
