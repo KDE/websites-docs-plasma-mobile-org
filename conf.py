@@ -16,11 +16,12 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import datetime
 
 # -- Project information -----------------------------------------------------
 
 project = 'Plasma Mobile'
-copyright = '2018, KDE Community'
+copyright = str(datetime.datetime.now().year) + ', KDE Community'
 author = 'KDE Community'
 
 # The short X.Y version
@@ -75,6 +76,7 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+html_logo = '_static/images/plasma-mobile.png'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -95,8 +97,12 @@ html_static_path = ['_static']
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-# html_sidebars = {}
-
+html_sidebars = {
+    '**': [
+        'relations.html',  # needs 'show_related': True theme option to display
+        'searchbox.html',
+    ]
+}
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
@@ -153,3 +159,8 @@ texinfo_documents = [
      author, 'PlasmaMobile', 'One line description of project.',
      'Miscellaneous'),
 ]
+
+# add css file
+def setup(app):
+    app.add_stylesheet('css/breeze.css')
+    app.add_stylesheet('css/custom.css')
