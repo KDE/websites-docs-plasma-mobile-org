@@ -1,0 +1,8 @@
+build:
+  image: debian:testing
+  before_script:
+   - apt install python3-sphinx-rtd-theme python3-sphinx make
+  script:
+   - make html
+
+
