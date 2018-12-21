@@ -1,8 +1,23 @@
-build:
-  image: debian:testing
-  before_script:
-   - apt install python3-sphinx-rtd-theme python3-sphinx make
+image: python:3
+
+variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+    - venv
+
+before_script:
+  - pip install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
+
+pages:
+  stage: deploy
   script:
-   - make html
-
-
+    - pip install -r requirements.txt
+    - sphinx-build -a . public
+  artifacts:
+    paths:
+    - public
