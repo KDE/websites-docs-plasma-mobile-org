@@ -75,7 +75,7 @@ What are requirements of device for porting Plasma Mobile?
 -  For Android based devices (ARM and x86) a Halium port is required:
 
    -  Device tree & Kernel source
-   -  Kernel version must be 3.1.0 or later
+   -  Kernel version must be 3.8.0 or later
    -  Devices with MediaTek chipsets are not recommended
    -  16 GiB of storage is recommended, but 8 GiB could also work
    -  1 GiB of RAM is needed
