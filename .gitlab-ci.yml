@@ -1,23 +1,4 @@
-image: python:3
+include: 'https://invent.kde.org/sysadmin/ci-tooling/raw/master/invent/websites-sphinx.yml'
 
 variables:
-    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-
-cache:
-  paths:
-    - .cache/pip
-    - venv
-
-before_script:
-  - pip install virtualenv
-  - virtualenv venv
-  - source venv/bin/activate
-
-pages:
-  stage: deploy
-  script:
-    - pip install -r requirements.txt
-    - sphinx-build -a . public
-  artifacts:
-    paths:
-    - public
+  WEBSITE_DIR: docs.plasma-mobile.org
