@@ -37,7 +37,8 @@ others, so it's possible to provide a system with UIs for multiple
 formfactors, and decide at runtime, which UI to offer. You can find the
 source code tarballs of the stable releases of Plasma on
 `download.kde.org <http://download.kde.org/stable/plasma/>`__. Git
-repositories can be browsed on `cgit.kde.org <https://cgit.kde.org/>`__.
+repositories can be browsed on `cgit.kde.org <https://cgit.kde.org/>`__
+and `invent.kde.org <https://invent.kde.org/>`__.
 
 As Plasma Mobile does not have stable release yet, we advise you to pull
 the code to create tarballs directly from our git repositories' master
