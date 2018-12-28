@@ -137,9 +137,9 @@ Edit the files to fit your naming and needs. In each command, replace
 
 ::
 
-   find . -name &quot;CMakeLists.txt&quot; -or -name &quot;*.desktop&quot; -or -name &quot;*.xml&quot; -or -name &quot;*.json&quot; -exec sed -i 's/org.kde.hellokirigami/io.you.newapp/g;s/hellokirigami/newapp/g' {} \;
+   find . -name "CMakeLists.txt" -or -name "*.desktop"; -or -name "*.xml"; -or -name "*.json" -exec sed -i 's/org.kde.hellokirigami/io.you.newapp/g;s/hellokirigami/newapp/g' {} \;
 
-   for file in $(find . -name &quot;org.kde.hellokirigami*&quot;); do mv $file $(echo $file | sed &quot;s/org.kde.hellokirigami/io.you.newapp/g&quot;); done
+   for file in $(find . -name "org.kde.hellokirigami*"); do mv $file $(echo $file | sed 's/org.kde.hellokirigami/io.you.newapp/g'); done
 
 Submitting your new application to the repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
