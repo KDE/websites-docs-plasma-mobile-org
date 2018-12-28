@@ -69,7 +69,7 @@ On Debian and derivates, you can use
 ``sudo apt install flatpak flatpak-builder``.
 
 First, clone the app template:
-``git clone https://gitlab.com/jbbgameich/plasma-mobile-app-template.git``
+``git clone https://invent.kde.org/jbbgameich/plasma-mobile-app-template.git``
 
 This repository can be used as a template to develop Plasma Mobile
 applications. It already includes templates for the qml ui, a c++ part,
