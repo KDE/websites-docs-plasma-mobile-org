@@ -18,6 +18,18 @@ that is open for the community to participate in.*"
    Introduction
    FAQ
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Development
+   :name: sec-development
+
+   Roadmap
+   Code
+   Contributing
+   DevGuide
+   AppDevelopment
+   Porting
+
 .. toctree::   
    :maxdepth: 1  
    :caption: Design
@@ -33,15 +45,3 @@ that is open for the community to participate in.*"
    FlashingNeon
    RunningApps
    TesterGuide
-
-.. toctree::   
-   :maxdepth: 1
-   :caption: Development
-   :name: sec-development
-
-   Roadmap
-   Code
-   Contributing
-   DevGuide
-   AppDevelopment
-   Porting
