@@ -102,4 +102,4 @@ Plasma Mobile 3.0 "Featured Smartphone"
 -  Cloud storage integration
 -  Games
 -  Cool apps
--  working Android emulation
+-  Working Android emulation

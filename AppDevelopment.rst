@@ -107,7 +107,7 @@ Creating a flatpak for the phone
 This assumes your system is already set up as described
 `here <https://community.kde.org/Guidelines_and_HOWTOs/Flatpak>`__. Make
 sure your system also supports qemu user emulation. If not, you can find
-help for example `here <https://wiki.debian.org/QemuUserEmulation>`__
+help for example `here. <https://wiki.debian.org/QemuUserEmulation>`__
 
 ::
 
@@ -133,7 +133,7 @@ Using the template to develop your application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Edit the files to fit your naming and needs. In each command, replace
-“io.you.newapp” and “newapp” with the id and name you want to use
+“io.you.newapp” and “newapp” with the id and name you want to use.
 
 ::
 

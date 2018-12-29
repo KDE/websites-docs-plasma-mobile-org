@@ -46,7 +46,7 @@ Visual Design
 ~~~~~~~~~~~~~
 
 The visual design stage is all about how it should look on the screen.
-Relevant questions that should be answered in this stage are
+Relevant questions that should be answered in this stage are:
 
 -  How should the wanted functionality be presented?
 -  Which graphical elements are necessary for functional and visual
@@ -167,7 +167,7 @@ Mockups can be used to design the visual layout of each screen of an
 application, without writing code. The mockup toolkit is provided as an
 Inkscape SVG with each Building Block UI element and sample mocked
 applications. This kit is centered around desktop design for now but
-will be refined later for phone design
+will be refined later for phone design.
 
 Find more information about mockup toolkit
 `here <https://community.kde.org/KDE_Visual_Design_Group/HIG/MockupToolkit>`__.
@@ -175,7 +175,7 @@ Find more information about mockup toolkit
 Phone Base Svg Frame
 ~~~~~~~~~~~~~~~~~~~~
 
-A simple frame to use for future phone mockups based on the Nexus 5
+A simple frame to use for future phone mockups based on the Nexus 5:
 
 .. figure:: Mockup2.png
    :alt: Mockup2.png

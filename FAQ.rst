@@ -31,7 +31,7 @@ Currently, Plasma Mobile runs on the following device types:
    built on top of Halium and KDE Neon (16.04 in the latest stable
    rootfs, 18.04 in the latest "edge" rootfs). `You can find more
    information
-   here <https://www.plasma-mobile.org/neon-arch-reference-rootfs/>`__
+   here. <https://www.plasma-mobile.org/neon-arch-reference-rootfs/>`__
 
 -  **x86-based:** If you want to try out Plasma Mobile on an Intel
    tablet, desktop/laptop, or virtual machine, the `x86_64 Neon-based
@@ -100,4 +100,4 @@ What's the state of the project?
 Plasma Mobile is currently under heavy development and is not intended
 to be used as a daily driver. For more information, check out `this page
 on the wiki which is kept up-to-date with the current project
-status <https://community.kde.org/Plasma/Mobile/General>`__
+status. <https://community.kde.org/Plasma/Mobile/General>`__

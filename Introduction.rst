@@ -95,11 +95,11 @@ with the current dialer.
 
 Supported features of the Nexus 5 and Nexus 5X include the camera,
 Wi-FI, battery monitoring and power settings, and audio (including
-hardware volume buttons)
+hardware volume buttons).
 
 A list of most known issues with the current "edge" rootfs can be found
 `here <https://notes.kde.org/public/plamo-testing>`__ and
-`here <https://phabricator.kde.org/tag/plasma%3A_mobile/>`__
+`here. <https://phabricator.kde.org/tag/plasma%3A_mobile/>`__
 
 Where can I find...
 ~~~~~~~~~~~~~~~~~~~
