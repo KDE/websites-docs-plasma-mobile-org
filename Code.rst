@@ -25,7 +25,7 @@ Plasma
 ------
 
 Plasma provides components for multi-device workspaces. Plasma desktop
-provides has been providing a stable, versatile and modular desktop.
+provides a stable, versatile and modular desktop.
 Plasma Mobile shares many components and all of its underlying
 architecture with Plasma desktop, but provides a UI and features
 necessary and useful on mobile devices. The idea is to provide a base
