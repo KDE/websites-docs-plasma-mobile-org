@@ -4,7 +4,7 @@ Introduction
 What is Plasma Mobile?
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Plasma Mobile offers a free (As in freedom and beer), user-friendly,
+Plasma Mobile offers a free (as in freedom and beer), user-friendly,
 privacy-enabling and customizable platform for mobile devices. Based on
 the `Halium <https://halium.org/>`__ project, we have official
 installable prototypes for two Android devices. However, Plasma Mobile
@@ -65,10 +65,10 @@ the current "edge" rootfs, you can find:
 -  The Angelfish web browser, based on QtWebEngine/Chromium, with full
    touch support including pinch-to-zoom
 -  The vvave music player
--  The Discover software center (Playing the role of an "app store" in
+-  The Discover software center (playing the role of an "app store" in
    this context)
 -  Marble Maps
--  The Index file manager (From the Maui Project but designed for both
+-  The Index file manager (from the Maui Project but designed for both
    Android and Plasma Mobile)
 -  A simple camera application
 -  Peruse, a comic book reader
@@ -78,7 +78,7 @@ the current "edge" rootfs, you can find:
 (Note: The list of included software will change often. We'll attempt to
 keep this list updated but it may be inaccurate at times.)
 
-Other software can be installed from Discover. Any Qt5 app (Including
+Other software can be installed from Discover. Any Qt5 app (including
 software designed for the desktop, such as Calligra) will run without
 many issues, though it will still be difficult to use on a touch
 display. Currently, software built with the GTK toolkit *will* run, but
@@ -94,7 +94,7 @@ in for cell connections, you should be able to immediately make calls
 with the current dialer.
 
 Supported features of the Nexus 5 and Nexus 5X include the camera,
-Wi-FI, battery monitoring and power settings, and audio (Including
+Wi-FI, battery monitoring and power settings, and audio (including
 hardware volume buttons)
 
 A list of most known issues with the current "edge" rootfs can be found
