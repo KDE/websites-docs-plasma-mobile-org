@@ -48,15 +48,15 @@ on the guest system -Plasma Mobile virtual machine- is required for
 executing Calamares, that will enable us to install Plasma Mobile. We
 can compile Virgil executing the following commands:
 
-.. raw:: mediawiki
+.. highlight:: bash
 
-   {{Input|1=<nowiki>
+::
+
    git clone git://git.freedesktop.org/git/virglrenderer
    cd virglrenderer
    ./autogen.sh
    make
    sudo make install
-   </nowiki>}}
 
 Install build dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -65,25 +65,48 @@ Depending on your distribution, dependency package names may vary. In
 KDE Neon, you may install the packages required to compile QEMU
 executing:
 
-.. raw:: mediawiki
+::
 
-   {{Input|1=<nowiki>
    sudo apt install libgtk-3-dev libspice-server-dev libspice-protocol-dev libusbredirparser-dev build-essential libepoxy-dev libdrm-dev libgbm-dev libx11-dev libpulse-dev libsdl2-dev
-   </nowiki>}}
 
 Install QEMU
 ^^^^^^^^^^^^
 
 To let our system have access to /usr/local/lib we run:
 
+::
+
+    LD_LIBRARY_PATH=/usr/local/lib
+    export LD_LIBRARY_PATH
+
 To compile QEMU with the set of options that fit our needs and then
 install it we execute:
+
+::
+
+    git clone git://git.qemu-project.org/qemu.git
+    mkdir -p qemu/build
+    cd qemu/build
+    ../configure --target-list=x86_64-softmmu --enable-gtk --with-gtkabi=3.0 --enable-kvm --enable-spice --enable-usb-redir --enable-virglrenderer --enable-opengl
+    make
+    sudo make install
 
 Create Virtual Machine
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Now, we need to create the Plasma Mobile virtual machine, running: Then,
-we execute Konsole, select a user password and open Calamares running:
+Now, we need to create the Plasma Mobile virtual machine, running:
+
+::
+
+    qemu-img create -f raw plamodisk 40G
+    /usr/local/bin/qemu-system-x86_64 -boot menu=on -cdrom /path/to/neon-pm-devedition-gitunstable-YYYYMMDD-HHMI-amd64.iso -vga virtio -display gtk,gl=on -m 2G -enable-kvm -boot order=d -drive file=plamodisk,format=raw
+
+Then, we execute Konsole, select a user password and open Calamares running:
+
+::
+
+    passwd
+    sudo -E calamares
 
 Follow Calamares instructions to install our system.
 
@@ -94,13 +117,15 @@ Follow Calamares instructions to install our system.
 -  Create the system user
 -  Validate your options
 
-Then, installation process will start.
-
-When completed, shutdown your virtual machine.
+Then, installation process will start. When completed, shutdown your virtual machine.
 
 Since installation has been completed, we no longer need the
 installation image. So, we will start our ready-to-use workstation
 executing:
+
+::
+
+    /usr/local/bin/qemu-system-x86_64 -vga virtio -display gtk,gl=on -m 2G -enable-kvm -boot order=d -drive file=plamodisk,format=raw
 
 Mobile device running plasma mobile
 -----------------------------------
@@ -119,6 +144,17 @@ proceed to installation, following the `installation
 instructions <https://wiki.postmarketos.org/wiki/Installation_guide>`__
 provided by postmarketOS team. When asked during installation, just
 select “plasma-mobile” as the user interface:
+
+::
+
+    Available user interfaces (5):
+    * none: No graphical environment
+    * hildon: (X11) Lightweight GTK+2 UI (optimized for single-touch touchscreens)
+    * luna: (Wayland) webOS UI, ported from the LuneOS project (Not working yet)
+    * plasma-mobile: (Wayland) Mobile variant of KDE Plasma, optimized for touchscreen
+    * weston: (Wayland) Reference compositor (demo, not a phone interface)
+    * xfce4: (X11) Lightweight GTK+2 desktop (stylus recommended)
+    User interface [weston]: plasma-mobile
 
 Using Halium
 ~~~~~~~~~~~~
