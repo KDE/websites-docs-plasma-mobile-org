@@ -4,38 +4,39 @@ Plasma Settings infrastructure
 Introduction
 ~~~~~~~~~~~~
 
-This tutorial teaches you how you can load Active settings modules into
+This tutorial teaches you how you can load Plasma settings modules into
 your app, and create your own modules.
 
-Active Settings is an app, much like Plasma Desktop's kcmshell that
+Plasma Settings is an app, much like Plasma Desktop's kcmshell that
 shows and loads configuration modules. These configuration modules are
 plugins providing a QML package and an optional C++-plugin which exports
 custom-written configuration objects as QObject to the declarative
 environment.
 
 You can query available modules using the --list argument to
-active-settings:
+plasma-settings:
 
 ::
 
-   $ active-settings --list
-   org.kde.active.settings.web             Settings for history, caching, etc.
-   org.kde.active.settings.configtest      Test Module for the Config Bindings
-   org.kde.active.settings.time            Settings for timezone and date display
+   $ plasma-settings --list
+   kcm_mobile_time ........... Timezone, Date Display
+   kcm_mobile_power .......... Lock, Sleep, Timeout
+   kcm_mobile_theme .......... Font and Theme
+   kaccounts ................. Add Your Online Accounts
 
 You can load an individual module by supplying its plugin name as
 argument to active-settings:
 
 ::
 
-   active-settings org.kde.active.settings.time
+   plasma-settings org.kde.active.settings.time
 
-will open the active-settings app and load the "Time and Date" module on
+will open the plasma-settings app and load the "Time and Date" module on
 startup.
 
 Architecture
 ~~~~~~~~~~~~
-The Active Settings app consists of a number of parts, an Active App,
+The Plasma Settings app consists of a number of parts, a Plasma App,
 which loads a QML package providing the chrome for active-settings, a
 set of Declarative components which encapsulate loading settings modules
 and a set of settings modules, which provide the UI and backend code for
@@ -67,6 +68,7 @@ SettingsItem encapsulates:
 
 ::
 
+   import QtQuick.Controls 2.2 as Controls
    import org.kde.active.settings 0.1 as ActiveSettings
    [...]
    ActiveSettings.SettingsItem {
@@ -75,7 +77,7 @@ SettingsItem encapsulates:
        anchors { [...] }
    }
 
-   PlasmaComponents.Button {
+   Controls.Button {
        // This button toggles the settings item and someOtherPage
        [...]
        onClicked: {
@@ -130,9 +132,9 @@ this:
    X-KDE-ServiceTypes=Active/SettingsModule
    X-KDE-PluginInfo-Author=Sebastian Kügler
    X-KDE-PluginInfo-Email=sebas@kde.org
-   X-KDE-PluginInfo-Name=org.kde.active.settings.web
+   X-KDE-PluginInfo-Name=kcm_mobile_web
    X-KDE-PluginInfo-Version=1.0
-   X-KDE-PluginInfo-Website=http://plasma-active.org
+   X-KDE-PluginInfo-Website=http://plasma-mobile.org
    X-KDE-PluginInfo-Category=Online Services
    X-KDE-PluginInfo-License=GPL
    X-Plasma-MainScript=ui/Web.qml
@@ -149,10 +151,7 @@ like this:
 
 ::
 
-   install(DIRECTORY web/ DESTINATION \
-       ${DATA_INSTALL_DIR}/plasma/packages/org.kde.active.settings.web)
-   install(FILES web/metadata.desktop \
-       DESTINATION ${SERVICES_INSTALL_DIR} RENAME plasma-package-org.kde.active.settings.web.desktop)
+   kpackage_install_package(package kcm_mobile_web kcms)
 
 Make sure the names of the .desktop files in CMakeLists.txt are correct,
 since incorrect names lead to problems finding and loading your package,
@@ -172,17 +171,17 @@ uses this mechanism:
 
 ::
 
-   import org.kde.plasma.components 0.1 as PlasmaComponents
+   import QtQuick.Controls 2.2 as Controls
    import org.kde.active.settings 0.1 as ActiveSettings
 
    [...]
-   ActiveSettings.ConfigModel {
+   ActiveSettings.ConfigGroup {
        id: adblockConfig
        file: "active-webbrowserrc"
        group: "adblock"
    }
    [...]
-   PlasmaComponents.Switch {
+   Controls.Switch {
        [...]
        onClicked: adblockConfig.writeEntry("adBlockEnabled", checked);
        Component.onCompleted: checked = adblockConfig.readEntry("adBlockEnabled");
@@ -196,7 +195,7 @@ config file (for example i ~/.kde4/share/config/):
    [adblock]
    adBlockEnabled=true
 
-ConfigModel will sync() the config file 5 seconds after a
+ConfigGroup will sync() the config file 5 seconds after a
 writeEntry(...) call, or on destruction of the module (for example by
 loading another module or page into the SettingsItem.
 
@@ -224,7 +223,7 @@ SettingsItem in your code, like in the above example. SettingsItem
 encapsulates the module loading mechanism and provides a PageStack
 interface. When a new settings module is loaded in the UI (by setting
 SettingsItem "module" property, the .desktop file is checked for an
-X-KDE-Library entry (X-KDE-Library=active_settings_time in the Time and
+X-KDE-Library entry (X-KDE-Library=kcm_mobile_time in the Time and
 Date example).
 
 This loads a small plugin, consisting of two classes:
@@ -318,5 +317,5 @@ very easy.
 
 You can have a look into the
 `modules <https://invent.kde.org/kde/plasma-settings/tree/master/modules>`__
-directory of Active Settings to get some inspiration, or a functioning
+directory of Plasma Settings to get some inspiration, or a functioning
 base for modules to play around with.
