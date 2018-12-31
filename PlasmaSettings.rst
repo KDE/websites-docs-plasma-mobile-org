@@ -1,8 +1,11 @@
-This tutorial teaches you how you can load Active settings modules into
-your app, and create your own modules.
+Plasma Settings infrastructure
+==============================
 
 Introduction
-============
+~~~~~~~~~~~~
+
+This tutorial teaches you how you can load Active settings modules into
+your app, and create your own modules.
 
 Active Settings is an app, much like Plasma Desktop's kcmshell that
 shows and loads configuration modules. These configuration modules are
@@ -31,8 +34,7 @@ will open the active-settings app and load the "Time and Date" module on
 startup.
 
 Architecture
-============
-
+~~~~~~~~~~~~
 The Active Settings app consists of a number of parts, an Active App,
 which loads a QML package providing the chrome for active-settings, a
 set of Declarative components which encapsulate loading settings modules
@@ -40,7 +42,7 @@ and a set of settings modules, which provide the UI and backend code for
 a specific settings domain (i.e. Time and Date, Browser settings, etc.).
 
 Integrating a Settings Module into an App
-=========================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to integrate a settings module "inline" into your app, you can
 use the SettingsItem component, which comes with the ActiveSettings
@@ -92,7 +94,7 @@ SettingsItem encapsulates:
    }
 
 Creating Your Own Settings Module
-=================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Simple, QML-only Module
 -----------------------
@@ -315,6 +317,6 @@ dependencies, so that providing a settings plugin along with your app is
 very easy.
 
 You can have a look into the
-`modules <http://quickgit.kde.org/?p=plasma-mobile.git&a=tree&h=d61c20d2697a06205134b9a4361382270068c55e&hb=afaeda27367ca0701efea14c0c292c6079d34882&f=applications/settings/modules>`__
+`modules <https://invent.kde.org/kde/plasma-settings/tree/master/modules>`__
 directory of Active Settings to get some inspiration, or a functioning
 base for modules to play around with.
