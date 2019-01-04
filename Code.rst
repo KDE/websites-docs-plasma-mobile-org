@@ -50,16 +50,18 @@ General Mobile Components
 The following git modules are generally useful on mobile devices and
 provide touch-friendly functionality.
 
--  *plasma-settings*: Settings application and modules.
--  *plasma-camera*: Camera application.
--  *marble*: Maps application
--  *koko*: Gallery application
--  *vvave*: Music player
--  *okular*: Document Viewer
--  *discover*: Software Center
+-  `plasma-settings <https://invent.kde.org/kde/plasma-settings>`_: Settings application and modules.
+-  `plasma-camera <https://invent.kde.org/kde/plasma-camera>`_: Camera application.
+-  *marble*: Maps application.
+-  *koko*: Gallery application.
+-  *vvave*: Music player.
+-  *okular*: Document Viewer.
+-  *discover*: Software Center.
 -  *plasma-angelfish*: Proof-of-concept demo webbrowser for phones.
 -  *plasma-samegame*: Small example game, pure QML.
 -  *mtp-server*: Fork of Ubuntu's MTP server
+-  `kaidan <https://git.kaidan.im/kaidan/kaidan>`_: XMPP based Messenger.
+-  `qmlkonsole <https://invent.kde.org/jbbgameich/qmlkonsole>`_: Terminal application.
 
 Phone Specific
 --------------
