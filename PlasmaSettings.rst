@@ -259,23 +259,23 @@ you specify in you metadata.desktop file as X-KDE-Library.
        [...]
        Q_PROPERTY(bool twentyFour READ twentyFour WRITE setTwentyFour NOTIFY twentyFourChanged)
 
-       public:
-           TimeSettings();
-           virtual ~TimeSettings();
+   public:
+       TimeSettings();
+       virtual ~TimeSettings();
 
-           [...]
-           bool twentyFour();
+       [...]
+       bool twentyFour();
 
-       public Q_SLOTS:
-           [...]
-           void setTwentyFour(bool t);
+   public slots:
+       [...]
+       void setTwentyFour(bool t);
 
-       Q_SIGNALS:
-           [...]
-           void twentyFourChanged();
+   signals:
+       [...]
+       void twentyFourChanged();
 
-       private:
-           TimeSettingsPrivate* d;
+   private:
+       TimeSettingsPrivate* d;
    };
 
 The types are basically reimplemented QObjects, which expose settings to
