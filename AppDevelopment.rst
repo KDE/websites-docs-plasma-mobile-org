@@ -81,7 +81,7 @@ Local building and testing using the SDK
 ::
 
    # Install the SDK
-   flatpak install flathub org.kde.Sdk # Only needs to be done once
+   flatpak install flathub org.kde.Sdk//5.12 # Only needs to be done once
 
    # Build
    flatpak-builder flatpak-build-desktop --force-clean --ccache *.json
@@ -111,7 +111,7 @@ help for example `here. <https://wiki.debian.org/QemuUserEmulation>`__
 
 ::
 
-   flatpak install flathub org.kde.Sdk/arm/5.11 # Only needs to be done once
+   flatpak install flathub org.kde.Sdk/arm/5.12 # Only needs to be done once
    flatpak-builder flatpak-build-phone --repo=arm-phone --arch=arm --force-clean --ccache *.json
    flatpak build-bundle arm-phone app.flatpak org.kde.hellokirigami
 
