@@ -26,8 +26,8 @@ Can I run Plasma Mobile on my mobile device?
 
 Currently, Plasma Mobile runs on the following device types:
 
--  **(Recommended) Nexus 5 and Nexus 5X:** We offer official
-   installation scripts for the Nexus 5 and Nexus 5X. The images are
+-  **(Recommended) Nexus 5X:** We offer official
+   installation scripts for the Nexus 5X. The images are
    built on top of Halium and KDE Neon (16.04 in the latest stable
    rootfs, 18.04 in the latest "edge" rootfs). `You can find more
    information
@@ -86,7 +86,7 @@ What are requirements of device for porting Plasma Mobile?
 I've installed Plasma Mobile, what is the login password?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you've installed it onto your Nexus 5/5X via the installation script,
+If you've installed it onto your Nexus 5X via the installation script,
 the password should be "1234", and you can then change it afterwards by
 running "passwd" in Konsole.
 

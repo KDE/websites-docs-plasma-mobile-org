@@ -33,11 +33,11 @@ Can I use it?
 ~~~~~~~~~~~~~
 
 Official Plasma Mobile images based on Halium and KDE Neon Git-Unstable
-are provided. We mainly test and support the Nexus 5 and Nexus 5X at
+are provided. We mainly test and support the Nexus 5X at
 this time, but you can potentially install it on any device supported by
 Halium. These Halium images are where most current development is
 happening, and scripts are supplied to ease installation of the Plasma
-Mobile rootfs onto Nexus 5 and 5X devices. `See further instructions
+Mobile rootfs onto a Nexus 5X device. `See further instructions
 here. <https://www.plasma-mobile.org/neon-arch-reference-rootfs/>`__
 
 There is also postmarketOS, a touch-optimized Alpine Linux with support
@@ -93,7 +93,7 @@ exploring options for integrating SMS. Once the relevant pieces are put
 in for cell connections, you should be able to immediately make calls
 with the current dialer.
 
-Supported features of the Nexus 5 and Nexus 5X include the camera,
+Supported features of the Nexus 5X include the camera,
 Wi-FI, battery monitoring and power settings, and audio (including
 hardware volume buttons).
 
