@@ -21,7 +21,7 @@ opportunity to familiarize with a set of important technologies:
    package software, using a compiler-independent method.
 -  Kirigami, a set of QtQuick components, facilitating the easy creation
    of applications that look and feel great on mobile as well as on
-   desktop devices, following the Kirigami Human Interface Guidelines.
+   desktop devices, following the KDE Human Interface Guidelines.
 
 Documentation resources
 ~~~~~~~~~~~~~~~~~~~~~~~
