@@ -6,8 +6,8 @@ What is Plasma Mobile?
 
 Plasma Mobile offers a free (as in freedom and beer), user-friendly,
 privacy-enabling and customizable platform for mobile devices. Based on
-the `Halium <https://halium.org/>`__ project, we have official
-installable prototypes for two Android devices. However, Plasma Mobile
+the `Halium <https://halium.org/>`__ project, we have an official
+installable prototype for the Nexus 5X device. However, Plasma Mobile
 is under heavy development and unfortunately cannot be used as a daily
 driver for most people.
 
