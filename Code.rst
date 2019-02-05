@@ -71,12 +71,6 @@ These additional git modules are useful for smartphones.
 -  *plasma-phone-components*: Dialer and Phone shell QtQuick code,
    application launcher model, etc.
 
-Development Tools
------------------
-
--  *xbuilder*: Script to set up an SDK.
--  *xutils*: Utilities for the SDK.
-
 Building the code
 =================
 
