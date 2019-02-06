@@ -65,8 +65,7 @@ Using the Kirigami application template
 We will use the KDE flatpak SDK to develop and package the app, so all
 that is required is a working flatpak and flatpak-builder installation.
 
-On Debian and derivates, you can use
-``sudo apt install flatpak flatpak-builder``.
+To install flatpak on your workstation, follow the official instructions provided `here <https://flatpak.org/setup/>`__.
 
 .. tip:: Before starting, please ensure that your system is already set up as described `here <https://community.kde.org/Guidelines_and_HOWTOs/Flatpak>`__.
 
