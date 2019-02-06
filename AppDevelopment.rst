@@ -112,7 +112,7 @@ help for example `here. <https://wiki.debian.org/QemuUserEmulation>`__
 
    flatpak install flathub org.kde.Sdk/arm/5.12 # Only needs to be done once
    flatpak-builder flatpak-build-phone --repo=arm-phone --arch=arm --force-clean --ccache *.json
-   flatpak build-bundle arm-phone app.flatpak org.kde.hellokirigami
+   flatpak build-bundle arm-phone hellokirigami.flatpak org.kde.hellokirigami --arch=arm
 
 Now your app is exported into app.flatpak. You can copy the file to the
 phone using scp:
