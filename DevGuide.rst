@@ -29,79 +29,44 @@ compiled for amd64. We will use it to set up our development virtual
 machine but you may use it to test Plasma Mobile in a non-android intel
 tablet as well.
 
-Compile QEMU
+Install QEMU
 ~~~~~~~~~~~~
 
-To proceed to installing, QEMU should be installed. QEMU is a free and
-open-source hosted hypervisor that performs hardware virtualization.
-Nevertheless, in many distributions QEMU is not packaged with Virgil 3d
-support. If your distribution provides such a qemu package you may omit
-and proceed to just installing QEMU using you distribution's application
-store.
+To proceed to installing, QEMU is needed. QEMU is a free and open-source hosted hypervisor that performs hardware virtualization. We will also need Virgil 3D. Virgil is a project that allows the guest operating system to use the capabilities of the host GPU to accelerate 3D rendering. OpenGL support on the guest system -Plasma Mobile virtual machine- is required for executing Calamares, that will enable us to install Plasma Mobile.
 
-Install Virglrenderer
-^^^^^^^^^^^^^^^^^^^^^
-
-Virgil is a project that allows the guest operating system to use the
-capabilities of the host GPU to accelerate 3D rendering. OpenGL support
-on the guest system -Plasma Mobile virtual machine- is required for
-executing Calamares, that will enable us to install Plasma Mobile. We
-can compile Virgil executing the following commands:
+Nevertheless, in some distributions QEMU is not packaged with Virgil 3D support. If your distribution provides such a qemu package just install QEMU using you distribution's application store. If you are using KDE Neon or an Ubuntu derivative, since Virgil 3D is not enabled in the QEMU package of the Ubuntu repository, you can install the `qemu-virgil <https://snapcraft.io/qemu-virgil/>`__ snap package and connect to the kvm interface, executing the following commands:
 
 .. highlight:: bash
 
 ::
 
-   git clone git://git.freedesktop.org/git/virglrenderer
-   cd virglrenderer
-   ./autogen.sh
-   make
-   sudo make install
+    sudo snap install qemu-virgil
+    sudo snap connect qemu-virgil:kvm
 
-Install build dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Depending on your distribution, dependency package names may vary. In
-KDE Neon, you may install the packages required to compile QEMU
-executing:
-
-::
-
-   sudo apt install libgtk-3-dev libspice-server-dev libspice-protocol-dev libusbredirparser-dev build-essential libepoxy-dev libdrm-dev libgbm-dev libx11-dev libpulse-dev libsdl2-dev
-
-Install QEMU
-^^^^^^^^^^^^
-
-To let our system have access to /usr/local/lib we run:
-
-::
-
-    LD_LIBRARY_PATH=/usr/local/lib
-    export LD_LIBRARY_PATH
-
-To compile QEMU with the set of options that fit our needs and then
-install it we execute:
-
-::
-
-    git clone git://git.qemu-project.org/qemu.git
-    mkdir -p qemu/build
-    cd qemu/build
-    ../configure --target-list=x86_64-softmmu --enable-gtk --with-gtkabi=3.0 --enable-kvm --enable-spice --enable-usb-redir --enable-virglrenderer --enable-opengl
-    make
-    sudo make install
-
+    
 Create Virtual Machine
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Now, we need to create the Plasma Mobile virtual machine, running:
+Now, we are going to create the Plasma Mobile virtual machine, running:
 
 ::
 
-    qemu-img create -f raw plamodisk 40G
-    /usr/local/bin/qemu-system-x86_64 -boot menu=on -cdrom /path/to/neon-pm-devedition-gitunstable-YYYYMMDD-HHMI-amd64.iso -vga virtio -display gtk,gl=on -m 2G -enable-kvm -boot order=d -drive file=plamodisk,format=raw
+    qemu-virgil.qemu-img create -f raw plamodisk 40G
+    qemu-virgil -enable-kvm -show-cursor -m 2048 -boot menu=on -cdrom /path/to/neon-pm-devedition-gitunstable-YYYYMMDD-HHMI-amd64.iso -device virtio-vga,virgl=on -display gtk,gl=on -boot order=d -drive file=plamodisk,format=raw
 
-Then, we execute Konsole, select a user password and open Calamares running:
+If you have no permission to access the KVM kernel module, you can execute:
+
+::
+
+    sudo chmod 666 /dev/kvm
+
+During booting, we suggest you to increase the window size of the QEMU window. If the resolution of your screen is low, some parts of the windows you open (e.g. Calamares) may be hidden. As a workaround, you can execute the below steps:
+
+- Select View > Grab Input, or just press Ctrl+Alt+G. Probably mouse pointer will not be displayed anymore in the guest system.
+- Holding Alt key, drag the window to show the invisible part
+- Press Ctrl+Alt+G again to display the mouse pointer
+
+To start the installation process, we execute Konsole, select a user password and open Calamares running:
 
 ::
 
@@ -125,12 +90,12 @@ executing:
 
 ::
 
-    /usr/local/bin/qemu-system-x86_64 -vga virtio -display gtk,gl=on -m 2G -enable-kvm -boot order=d -drive file=plamodisk,format=raw
+    qemu-virgil -device virtio-vga,virgl=on -display gtk,gl=on -m 2G -enable-kvm -boot order=d -drive file=plamodisk,format=raw
 
 Mobile device running plasma mobile
 -----------------------------------
 
-Currently, you may run Plasma Mobile on an actual mobile device, either
+You may also run Plasma Mobile on an actual mobile device, either
 by installing postmarketOS or using Halium as hardware adaption layer.
 
 Using postmarketOS
