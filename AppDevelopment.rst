@@ -68,6 +68,8 @@ that is required is a working flatpak and flatpak-builder installation.
 On Debian and derivates, you can use
 ``sudo apt install flatpak flatpak-builder``.
 
+.. tip:: Before starting, please ensure that your system is already set up as described `here <https://community.kde.org/Guidelines_and_HOWTOs/Flatpak>`__.
+
 First, clone the app template:
 ``git clone https://invent.kde.org/jbbgameich/plasma-mobile-app-template.git``
 
@@ -104,9 +106,7 @@ you have successfully created your first Plasma Mobile application!
 Creating a flatpak for the phone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This assumes your system is already set up as described
-`here <https://community.kde.org/Guidelines_and_HOWTOs/Flatpak>`__. Make
-sure your system also supports qemu user emulation. If not, you can find
+Make sure your system supports qemu user emulation. If not, you can find
 help for example `here. <https://wiki.debian.org/QemuUserEmulation>`__
 
 ::
