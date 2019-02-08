@@ -28,6 +28,7 @@ that is open for the community to participate in.*"
    Contributing
    DevGuide
    AppDevelopment
+   KirigamiTutorial
    PlasmaSettings
    Porting
 
