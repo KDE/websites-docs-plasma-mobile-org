@@ -69,7 +69,7 @@ So, we are going to substitute the Page component of main.qml of the skeleton ap
      }
    }
 
-What we have done so far is to create a ScrollablePage and put into it a CardsGridView, since we want to display a grid of Cards generated from a model. The data of each contact is provided from a `ListModel <https://doc.qt.io/qt-5/qml-qtqml-models-listmodel.html>`_ while the card delegate is responsible for the presentation of the data. For more info about models and views in Qt Quick, see `here <https://doc.qt.io/qt-5/qtquick-modelviewsdata-modelview.html>`_.
+What we have done so far is to create a ScrollablePage and put into it a CardsGridView, since we want to display a grid of Cards generated from a model. The data of each contact is provided by a `ListModel <https://doc.qt.io/qt-5/qml-qtqml-models-listmodel.html>`_ while the card delegate is responsible for the presentation of the data. For more info about models and views in Qt Quick, see `here <https://doc.qt.io/qt-5/qtquick-modelviewsdata-modelview.html>`_.
 
 Now let's populate the model that will feed our grid view with data. In Kirigami.ScrollablePage definition, just after:
 
