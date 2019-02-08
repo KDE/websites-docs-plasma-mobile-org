@@ -136,7 +136,7 @@ Edit the files to fit your naming and needs. In each command, replace
 
 ::
 
-   sed -i 's/org.kde.hellokirigami/io.you.newapp/g;s/hellokirigami/newapp/g' $(find . -name "CMakeLists.txt" -or -name "*.desktop" -or -name "*.xml" -or -name "*.json")
+   sed -i 's/org.kde.hellokirigami/org.kde.kirigami-tutorial/g;s/[Hh]ello[Kk]irigami/kirigami-tutorial/g' $(find . -name "CMakeLists.txt" -or -name "*.desktop" -or -name "*.xml" -or -name "*.json"  -or -name *.cpp)
 
    for file in $(find . -name "org.kde.hellokirigami*"); do mv $file $(echo $file | sed 's/org.kde.hellokirigami/io.you.newapp/g'); done
 
