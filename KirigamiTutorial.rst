@@ -27,7 +27,7 @@ Now that the requirements of our project have been defined we need to find out t
 
 Looking for a card layout
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-Navigating through the Kirigami Gallery application, we will stumble upon the "Grid view of cards" gallery component. This is a good candidate that serves our purpose; displaying a grid of contact cards. 
+Navigating through the Kirigami Gallery application, we will stumble upon the "Grid view of cards" gallery component. This is a good candidate that serves our purpose; to display a grid of contact cards.
 
 .. figure:: kirigami-tutorial-1.png
    :scale: 50 %
@@ -36,11 +36,11 @@ Navigating through the Kirigami Gallery application, we will stumble upon the "G
    List of kirigami gallery components
    
    
-After selecting the "Grid view of cards" gallery component, we will click to the bottom action and will get some useful information about the Card and Abstract Card types. 
+After selecting the "Grid view of cards" gallery component, we will click to the bottom action and we will get some useful information about the Card and Abstract Card types. 
 
 .. figure:: kirigami-tutorial-2.png
    :scale: 50 %
-   :alt: kirigami galery grid view
+   :alt: kirigami gallery card grid view
 
    Kirigami gallery grid view
 
@@ -66,11 +66,19 @@ So, we are going to substitute the Page component of main.qml of the skeleton ap
         }
                 
         delegate: card
-    }
+     }
+   }
 
 What we have done so far is to create a ScrollablePage and put into it a CardsGridView, since we want to display a grid of Cards generated from a model. The data of each contact is provided from a `ListModel <https://doc.qt.io/qt-5/qml-qtqml-models-listmodel.html>`_ while the card delegate is responsible for the presentation of the data. For more info about models and views in Qt Quick, see `here <https://doc.qt.io/qt-5/qtquick-modelviewsdata-modelview.html>`_.
 
-Now let's populate the model that will feed our grid view with data. Just after the definition of our Kirigami.ScrollablePage, add the below: 
+Now let's populate the model that will feed our grid view with data. In Kirigami.ScrollablePage definition, just after:
+
+::
+
+      delegate: card
+    }
+     
+add the below: 
 
 ::
 
@@ -83,7 +91,7 @@ Now let's populate the model that will feed our grid view with data. Just after 
         mainModel.append({"firstname": "Kate", "lastname": "Adams", "cellphone": "6300000005", "email" : "kate-adams@example.com", "photo": "qrc:/konqi.jpg"});                        
     }
 
-Since we have a ready-to-present data model, let's proceed to defining a delegate that will be responsible for displaying the data. So, we add the below code to the main.qml page, just after the Component.onCompleted definition :
+Since we have a ready-to-present data model, let's proceed to defining a delegate that will be responsible for displaying the data. So, we add the below code to the main.qml page, just after the Component.onCompleted definition:
 
 ::
 
@@ -91,24 +99,24 @@ Since we have a ready-to-present data model, let's proceed to defining a delegat
         id: card
 
         Kirigami.Card {
-                                    
+
             height: view.cellHeight - Kirigami.Units.largeSpacing
-            
+
             banner {
-                title: model.firstname + " " + model.lastname 
+                title: model.firstname + " " + model.lastname
                 titleIcon: "im-user"
             }
-                    
-            contentItem: Column 
+
+            contentItem: Column {
                 id: content
 
                 spacing: Kirigami.Units.smallSpacing
-                
+
                 Controls.Label {
                     wrapMode: Text.WordWrap
                     text: "Mobile: " + model.cellphone
                 }
-                
+
                 Controls.Label {
                     wrapMode: Text.WordWrap
                     text: "Email: " + model.email
@@ -116,6 +124,7 @@ Since we have a ready-to-present data model, let's proceed to defining a delegat
             }
         }
     }
+
 
 Following the relative information in the `api page <https://api.kde.org/frameworks/kirigami/html/classorg_1_1kde_1_1kirigami_1_1Card.html>`_ we populate a "banner" (although without an image yet), that will act as a header that will display the name of the contact and as well as a contact icon.
 
@@ -128,7 +137,9 @@ The application should look like this:
    :alt: simple grid without actions
 
    Simple grid of cards
-   
+
+.. tip:: You can find the full source code of the tutorial in `gitlab <https://invent.kde.org/dkardarakos/kirigami-tutorial>`_.
+
 As a last step we will add some dummy functionality to each card. In particular, a "call" action will be added. Nevertheless, instead of a real call a passive notification will be displayed. So, let's change the card Component to the below:
 
 ::
