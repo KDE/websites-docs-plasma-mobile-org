@@ -33,6 +33,7 @@ that is open for the community to participate in.*"
    DevGuide
    AppDevelopment
    PlasmaSettings
+   RunningApps
    Porting
 
 .. toctree::   
@@ -41,11 +42,3 @@ that is open for the community to participate in.*"
    :name: sec-design
 
    Design
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Flashing and Testing
-   :name: sec-flashing
-
-   FlashingNeon
-   RunningApps
