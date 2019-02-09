@@ -1,5 +1,5 @@
-Plasma Settings infrastructure
-==============================
+Settings module development
+===========================
 
 Introduction
 ~~~~~~~~~~~~
@@ -42,8 +42,8 @@ set of Declarative components which encapsulate loading settings modules
 and a set of settings modules, which provide the UI and backend code for
 a specific settings domain (i.e. Time and Date, Browser settings, etc.).
 
-Integrating a Settings Module into an App
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Integrate a settings module
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to integrate a settings module "inline" into your app, you can
 use the SettingsItem component, which comes with the ActiveSettings
@@ -95,11 +95,11 @@ SettingsItem encapsulates:
        /* this guy is shown before any module is loaded */
    }
 
-Creating Your Own Settings Module
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create a settings module
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-Simple, QML-only Module
------------------------
+QML-only module architecture
+----------------------------
 
 Writing a basic ActiveSettings configuration module is as simple as
 creating a Plasma Package, using the X-KDE-ServiceTypes
@@ -160,7 +160,7 @@ active-settings --list for already installed modules. After you
 installed the plugin (or changed its metadata) you'll need to run
 "kbuildsycoca4" in order to update the plugin metainformation cache.
 
-KConfig Bindings
+KConfig bindings
 ----------------
 
 Active Settings provides declarative bindings for KConfigGroup. This
@@ -211,8 +211,8 @@ can extend your settings module using a C++ plugin. Of course you can
 choose to use both, the already provided KConfig bindings, and an
 additional plugin.
 
-Extending your Settings Module with with C++
---------------------------------------------
+Extend your settings module with C++
+------------------------------------
 
 In some cases, you will find a pure declarative settings module too
 limited. By extending a settings module with C++ functionality, you can

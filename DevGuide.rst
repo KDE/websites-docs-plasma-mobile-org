@@ -1,5 +1,5 @@
-Plasma Mobile Developer Guide
-=============================
+Setup the development environment
+=================================
 
 The development environment needed depends on the specific area of
 Plasma Mobile you want to contribute. There are three kinds of
@@ -19,8 +19,8 @@ on a machine that emulates a mobile device.
 Plasma Mobile emulated environment
 ----------------------------------
 
-Get the Plasma Mobile installation image
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get the installation image
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 At first, you have to download the Plasma Mobile `installation
 image <https://www.plasma-mobile.org/get/#desktop>`__. This image is
@@ -92,14 +92,14 @@ executing:
 
     qemu-virgil -device virtio-vga,virgl=on -display gtk,gl=on -m 2G -enable-kvm -boot order=d -drive file=plamodisk,format=raw
 
-Mobile device running plasma mobile
------------------------------------
+Plasma Mobile device environment
+--------------------------------
 
 You may also run Plasma Mobile on an actual mobile device, either
 by installing postmarketOS or using Halium as hardware adaption layer.
 
-Using postmarketOS
-~~~~~~~~~~~~~~~~~~
+postmarketOS
+~~~~~~~~~~~~
 
 `PostmarketOS <https://postmarketos.org/>`__ is a touch-optimized,
 pre-configured Alpine Linux-based distribution. Currently, postmarketOS
@@ -121,8 +121,8 @@ select “plasma-mobile” as the user interface:
     * xfce4: (X11) Lightweight GTK+2 desktop (stylus recommended)
     User interface [weston]: plasma-mobile
 
-Using Halium
-~~~~~~~~~~~~
+Halium
+~~~~~~
 
 `Halium <https://halium.org/>`__ provides the minimal android layer that
 allows a non-Android graphical environment to interact with the
