@@ -1,4 +1,0 @@
-Plasma Mobile Tester Guide
-==========================
-
-

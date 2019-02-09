@@ -46,4 +46,3 @@ that is open for the community to participate in.*"
 
    FlashingNeon
    RunningApps
-   TesterGuide
