@@ -29,7 +29,6 @@ that is open for the community to participate in.*"
    :caption: Development
    :name: sec-development
 
-   Roadmap
    Code
    Contributing
    DevGuide
