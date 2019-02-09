@@ -20,6 +20,13 @@ that is open for the community to participate in.*"
 
 .. toctree::
    :maxdepth: 1
+   :caption: Using
+   :name: sec-using
+
+   Installation
+
+.. toctree::
+   :maxdepth: 1
    :caption: Development
    :name: sec-development
 
