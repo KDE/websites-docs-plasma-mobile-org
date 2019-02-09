@@ -1,16 +1,6 @@
 Getting the Code
 ================
 
-You can check out any of these repos easily:
-
-``git clone kde:``\ 
-
-You should add the "kde" alias to your `Git
-setup <https://techbase.kde.org/Development/Git/Configuration#URL_Renaming>`__.
-The code for various Plasma Mobile components can be found on `the git
-repository <https://phabricator.kde.org/diffusion/query/H_KxUC6zq6ET/>`__
-(but please read below for more details).
-
 Frameworks
 ----------
 
@@ -36,17 +26,16 @@ plasma-mobile and friends. None of the repositories conflicts with
 others, so it's possible to provide a system with UIs for multiple
 formfactors, and decide at runtime, which UI to offer. You can find the
 source code tarballs of the stable releases of Plasma on
-`download.kde.org <http://download.kde.org/stable/plasma/>`__. Git
-repositories can be browsed on `cgit.kde.org <https://cgit.kde.org/>`__
-and `invent.kde.org <https://invent.kde.org/>`__.
+`download.kde.org <http://download.kde.org/stable/plasma/>`__ or check the git
+repositories on `cgit.kde.org <https://cgit.kde.org/>`
 
-As Plasma Mobile does not have stable release yet, we advise you to pull
-the code to create tarballs directly from our git repositories' master
-branches. Relevant repositiories for Plasma Mobile are:
+Plasma Mobile
+-------------
+Plasma Mobile does not have stable release yet. So, we advise you to pull
+the code directly from our git repositories' master branches at `invent.kde.org <https://invent.kde.org/>`. In the following section you may find direct lnks to several Plasma Mobile components.
 
-General Mobile Components
--------------------------
-
+General mobile components
+~~~~~~~~~~~~~~~~~~~~~~~~~
 The following git modules are generally useful on mobile devices and
 provide touch-friendly functionality.
 
@@ -63,8 +52,8 @@ provide touch-friendly functionality.
 -  `kaidan <https://git.kaidan.im/kaidan/kaidan>`_: XMPP based Messenger.
 -  `qmlkonsole <https://invent.kde.org/jbbgameich/qmlkonsole>`_: Terminal application.
 
-Phone Specific
---------------
+Plasma phone components
+-----------------------
 
 These additional git modules are useful for smartphones.
 
@@ -72,7 +61,6 @@ These additional git modules are useful for smartphones.
    application launcher model, etc.
 
 Building the code
-=================
+-----------------
 
-In order to build Plasma Mobile, please refer to the `build
-instructions <https://community.kde.org/Frameworks/Building>`__.
+In order to build Plasma Mobile, please refer to the `build instructions <https://community.kde.org/Frameworks/Building>`__.

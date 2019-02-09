@@ -16,6 +16,7 @@ that is open for the community to participate in.*"
    :name: sec-general
 
    Introduction
+   Code
 
 .. toctree::
    :maxdepth: 1
@@ -29,7 +30,6 @@ that is open for the community to participate in.*"
    :caption: Development
    :name: sec-development
 
-   Code
    DevGuide
    AppDevelopment
    PlasmaSettings
