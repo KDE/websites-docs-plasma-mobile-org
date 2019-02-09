@@ -16,7 +16,6 @@ that is open for the community to participate in.*"
    :name: sec-general
 
    Introduction
-   FAQ
 
 .. toctree::
    :maxdepth: 1
