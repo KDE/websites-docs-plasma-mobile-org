@@ -5,14 +5,14 @@ factors. Apps or system components can be specific for a device such as
 a smartphone, but may also be applicable and useful on other types of
 devices, such as laptops.
 
-Design Process
+Design process
 --------------
 
 This design process is iterative in nature and combines input from
 interaction designers, visual designers and developers in all stages. A
 guideline for a design process looks could be:
 
-Requirements Analysis
+Requirements analysis
 ~~~~~~~~~~~~~~~~~~~~~
 
 The first step to building an application is to analyze the problem that
@@ -29,7 +29,7 @@ In this phase, try to answer the following questions:
 -  How do we want to solve this problem (may be on an abstract level)?
 -  Which user-facing functional changes do we want to make?
 
-Interaction Design
+Interaction design
 ~~~~~~~~~~~~~~~~~~
 
 In the interaction design stage, the requirements are translated into
@@ -42,7 +42,7 @@ functional additions or changes.
 -  How can these actions be labeled and presented to the user in a
    self-explanatory way?
 
-Visual Design
+Visual sesign
 ~~~~~~~~~~~~~
 
 The visual design stage is all about how it should look on the screen.
@@ -89,13 +89,13 @@ enthusiast users that appreciate the work done. Time to think about the
 next iteration, how can the feature be made more valuable, better
 understandable, or just a lot more appealing or useful?
 
-Design Tools
+Design tools
 ------------
 
 The following tools help you to design a well-integrated, good looking
 and functional application or feature.
 
-Vision Statement
+Vision statement
 ~~~~~~~~~~~~~~~~
 
 Plasma Mobile is designed based on the following vision statement:
@@ -115,7 +115,7 @@ Based on the vision statement, applications should be designed for the
 following personas (from
 `techbase <https://techbase.kde.org/Projects/Usability/Principles/KDE4_Personas>`__):
 
-Berna the Office Worker
+Berna the office worker
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Berna is an office worker, she says "*I want to feel safe*".
@@ -131,7 +131,7 @@ Berna twice lost several hours of work because she didn't understand the
 options she was offered. Since then, she has been very careful when
 probing new functionality.
 
-Recreational User
+Recreational user
 ^^^^^^^^^^^^^^^^^
 
 "Susan" is a recreational user, her motto is "*I want to be creative and
@@ -172,9 +172,6 @@ will be refined later for phone design.
 Find more information about mockup toolkit
 `here <https://community.kde.org/KDE_Visual_Design_Group/HIG/MockupToolkit>`__.
 
-Phone Base Svg Frame
-~~~~~~~~~~~~~~~~~~~~
-
 A simple frame to use for future phone mockups based on the Nexus 5:
 
 .. figure:: Mockup2.png
@@ -182,18 +179,13 @@ A simple frame to use for future phone mockups based on the Nexus 5:
 
    Mockup2.png
 
-Where do I find other Plasma Mobile designers?
-----------------------------------------------
+Contribute 
+----------
 
 Coordination of design related topics is done in the Plasma Mobile
 `Matrix room <https://matrix.to/#/#plasmamobile:matrix.org>`__. For more
 community groups and channels check the relative web
-`page <https://www.plasma-mobile.org/join/>`__.
-
-Where do I find the KDE Visual Design Group designers?
-------------------------------------------------------
-
-You may join KDE Visual Design Group and start discussing design topics
+`page <https://www.plasma-mobile.org/join/>`__. You may also interested in joining the KDE Visual Design Group and start discussing design topics
 in the relative `Matrix
 room <https://riot.im/app/#/room/#freenode_#kde-vdg:matrix.org>`__. More
 KDE VDG communication channels can be found
