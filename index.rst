@@ -30,7 +30,6 @@ that is open for the community to participate in.*"
    :name: sec-development
 
    Code
-   Contributing
    DevGuide
    AppDevelopment
    KirigamiTutorial
