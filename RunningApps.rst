@@ -37,12 +37,6 @@ If you want to run the Plasma phone shell, do:
     export $(dbus-launch)
     exec /usr/bin/plasmashell -p org.kde.plasma.phone
 
-If kded5 has crashed, you may have to start it manually:
-
-::
-
-    /usr/bin/kded5 &
-
 Debugging Applications
 ----------------------
 
