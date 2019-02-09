@@ -1,5 +1,5 @@
-Getting the Code
-================
+Get the source code
+===================
 
 Frameworks
 ----------
@@ -26,13 +26,13 @@ plasma-mobile and friends. None of the repositories conflicts with
 others, so it's possible to provide a system with UIs for multiple
 formfactors, and decide at runtime, which UI to offer. You can find the
 source code tarballs of the stable releases of Plasma on
-`download.kde.org <http://download.kde.org/stable/plasma/>`__ or check the git
-repositories on `cgit.kde.org <https://cgit.kde.org/>`
+`download.kde.org <http://download.kde.org/stable/plasma/>`_ or check the git
+repositories on `cgit.kde.org <https://cgit.kde.org/>`_.
 
 Plasma Mobile
 -------------
 Plasma Mobile does not have stable release yet. So, we advise you to pull
-the code directly from our git repositories' master branches at `invent.kde.org <https://invent.kde.org/>`. In the following section you may find direct lnks to several Plasma Mobile components.
+the code directly from our git repositories' master branches at `invent.kde.org <https://invent.kde.org/>`_. In the following section you may find direct links to the source code of several Plasma Mobile components.
 
 General mobile components
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,11 +41,11 @@ provide touch-friendly functionality.
 
 -  `plasma-settings <https://invent.kde.org/kde/plasma-settings>`_: Settings application and modules.
 -  `plasma-camera <https://invent.kde.org/kde/plasma-camera>`_: Camera application.
--  *marble*: Maps application.
--  *koko*: Gallery application.
--  *vvave*: Music player.
--  *okular*: Document Viewer.
--  *discover*: Software Center.
+-  `marble <https://cgit.kde.org/marble.git/>`_: Maps application.
+-  `koko <https://cgit.kde.org/koko.git/>`_: Gallery application.
+-  `vvave <https://cgit.kde.org/vvave.git/>`_: Music player.
+-  `okular <https://cgit.kde.org/okular.git/>`_: Document Viewer.
+-  `discover <https://cgit.kde.org/discover.git>`_: Software Center.
 -  *plasma-angelfish*: Proof-of-concept demo webbrowser for phones.
 -  *plasma-samegame*: Small example game, pure QML.
 -  *mtp-server*: Fork of Ubuntu's MTP server
@@ -55,12 +55,12 @@ provide touch-friendly functionality.
 Plasma phone components
 -----------------------
 
-These additional git modules are useful for smartphones.
+These additional git modules are useful for smartphones:
 
--  *plasma-phone-components*: Dialer and Phone shell QtQuick code,
+-  `plasma-phone-components <https://invent.kde.org/kde/plasma-phone-components>`_: Dialer and Phone shell QtQuick code,
    application launcher model, etc.
 
-Building the code
------------------
+Build the source code
+---------------------
 
-In order to build Plasma Mobile, please refer to the `build instructions <https://community.kde.org/Frameworks/Building>`__.
+In order to build Plasma Mobile from source, please refer to the `build instructions <https://community.kde.org/Frameworks/Building>`__.

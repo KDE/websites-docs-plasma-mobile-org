@@ -58,8 +58,8 @@ components to the target device.
 
 .. attention:: The above could take quite some time (15-20 minutes) and requires you to enter your password to continue.
 
-After flashing
-~~~~~~~~~~~~~~
+Useful tips
+~~~~~~~~~~~
 
 If flashing has completed successfully, you can reboot your phone and you should automatically login to a working session. The username of the logged-in user is phablet and the password is ‘1234’.
 

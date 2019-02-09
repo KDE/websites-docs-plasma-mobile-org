@@ -1,5 +1,5 @@
-Executing applications
-======================
+Execute applications
+====================
 
 This document describes the necessary environment variables and steps
 for running and debugging applications in Plasma Mobile.
