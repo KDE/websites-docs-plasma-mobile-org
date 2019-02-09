@@ -91,7 +91,7 @@ add the below:
         mainModel.append({"firstname": "Kate", "lastname": "Adams", "cellphone": "6300000005", "email" : "kate-adams@example.com", "photo": "qrc:/konqi.jpg"});                        
     }
 
-Since we have a ready-to-present data model, let's proceed to defining a delegate that will be responsible for displaying the data. So, we add the below code to the main.qml page, just after the Component.onCompleted definition:
+The model part of our implementation is ready. Let's proceed to defining a delegate that will be responsible for displaying the data. So, we add the below code to the main.qml page, just after the Component.onCompleted definition:
 
 ::
 
@@ -126,7 +126,7 @@ Since we have a ready-to-present data model, let's proceed to defining a delegat
     }
 
 
-Following the relative information in the `api page <https://api.kde.org/frameworks/kirigami/html/classorg_1_1kde_1_1kirigami_1_1Card.html>`_ we populate a "banner" (although without an image yet), that will act as a header that will display the name of the contact and as well as a contact icon.
+Following the relative information in the `api page <https://api.kde.org/frameworks/kirigami/html/classorg_1_1kde_1_1kirigami_1_1Card.html>`_ we populate a "banner" (although without an image yet), that will act as a header that will display the name of the contact as well as a contact icon.
 
 The main content of the card has been populated with the cell phone number and the email of the contact, structured as a `column <https://doc.qt.io/qt-5/qml-qtquick-column.html>`_ of `labels <https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html>`_. 
 
@@ -138,9 +138,9 @@ The application should look like this:
 
    Simple grid of cards
 
-.. tip:: You can find the full source code of the tutorial in `gitlab <https://invent.kde.org/dkardarakos/kirigami-tutorial>`_.
+.. tip:: You can find the full source code of the tutorial at `invent.kde.org <https://invent.kde.org/dkardarakos/kirigami-tutorial>`_.
 
-As a last step we will add some dummy functionality to each card. In particular, a "call" action will be added. Nevertheless, instead of a real call a passive notification will be displayed. So, let's change the card Component to the below:
+As a last step we will add some dummy functionality to each card. In particular, a "call" action will be added. Nevertheless, instead of a real call, a passive notification will be displayed. So, let's change the card Component to the below:
 
 ::
 
@@ -183,7 +183,7 @@ As a last step we will add some dummy functionality to each card. In particular,
         }
 
 
-In essence, we added an `action <https://api.kde.org/frameworks/kirigami/html/classorg_1_1kde_1_1kirigami_1_1Action.html>`_  that, as soon as it is triggered (by pressing the action button), a `passive notification <https://api.kde.org/frameworks/kirigami/html/classorg_1_1kde_1_1kirigami_1_1AbstractApplicationWindow.html#a0a31a7c36993433b260f27ef9b7b9be1>`_ is displayed.
+So, we added an `action <https://api.kde.org/frameworks/kirigami/html/classorg_1_1kde_1_1kirigami_1_1Action.html>`_  that, as soon as it is triggered (by pressing the action button), a `passive notification <https://api.kde.org/frameworks/kirigami/html/classorg_1_1kde_1_1kirigami_1_1AbstractApplicationWindow.html#a0a31a7c36993433b260f27ef9b7b9be1>`_ is displayed.
 
 Finally, our application should look like this:
 
@@ -191,5 +191,5 @@ Finally, our application should look like this:
    :scale: 50 %
    :alt: grid with actions
 
-   Grid with calling action
+   Grid with calling action triggered
         
