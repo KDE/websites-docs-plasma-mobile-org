@@ -104,12 +104,9 @@ A list of most known issues with the current "edge" rootfs can be found
 Where can I find...
 ~~~~~~~~~~~~~~~~~~~
 
-More info, such as installation instructions, is available in the
-`Plasma Mobile Wiki <http://community.kde.org/Plasma/Mobile>`__ and on
-the `Plasma Mobile website <http://www.plasma-mobile.org>`__.
-
 The code for various Plasma Mobile components can be found on
-`git.kde.org <https://projects.kde.org/projects/playground/mobile>`__.
+`git.kde.org <https://cgit.kde.org>`__.
+See `Get the source code <https://docs.plasma-mobile.org/Code.html>`__ for the individual repositories.
 
 You can also ask your questions in the `Plasma Mobile community groups
 and channels <https://www.plasma-mobile.org/join/>`__.
