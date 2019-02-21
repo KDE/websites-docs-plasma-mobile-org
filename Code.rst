@@ -46,7 +46,7 @@ provide touch-friendly functionality.
 -  `vvave <https://cgit.kde.org/vvave.git/>`_: Music player.
 -  `okular <https://cgit.kde.org/okular.git/>`_: Document Viewer.
 -  `discover <https://cgit.kde.org/discover.git>`_: Software Center.
--  *plasma-angelfish*: Proof-of-concept demo webbrowser for phones.
+-  `plasma-angelfish <https://cgit.kde.org/plasma-angelfish.git>`_: Webbrowser for phones.
 -  *plasma-samegame*: Small example game, pure QML.
 -  *mtp-server*: Fork of Ubuntu's MTP server
 -  `kaidan <https://git.kaidan.im/kaidan/kaidan>`_: XMPP based Messenger.
