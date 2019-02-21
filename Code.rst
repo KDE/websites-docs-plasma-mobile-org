@@ -51,6 +51,7 @@ provide touch-friendly functionality.
 -  *mtp-server*: Fork of Ubuntu's MTP server
 -  `kaidan <https://git.kaidan.im/kaidan/kaidan>`_: XMPP based Messenger.
 -  `qmlkonsole <https://invent.kde.org/jbbgameich/qmlkonsole>`_: Terminal application.
+-  `peruse <https://cgit.kde.org/peruse.git>`_: A comic book viewer
 
 Plasma phone components
 -----------------------
