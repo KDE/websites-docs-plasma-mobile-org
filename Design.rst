@@ -42,7 +42,7 @@ functional additions or changes.
 -  How can these actions be labeled and presented to the user in a
    self-explanatory way?
 
-Visual sesign
+Visual design
 ~~~~~~~~~~~~~
 
 The visual design stage is all about how it should look on the screen.
