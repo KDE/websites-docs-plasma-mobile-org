@@ -58,6 +58,16 @@ components to the target device.
 
 .. attention:: The above could take quite some time (15-20 minutes) and requires you to enter your password to continue.
 
+Depending on the Android version installed before flashing, your device may hang on the "Google" logo after your first boot. If this occurs,
+you must enter fastboot mode again (power + volume down) and from your pm-flashtool directory run:
+
+::
+
+    ./flash-vendor
+
+Your phone should be able to reboot into Plasma Mobile now and login can occur
+as normal.
+
 Useful tips
 ~~~~~~~~~~~
 
