@@ -35,6 +35,7 @@ that is open for the community to participate in.*"
    PlasmaSettings
    RunningApps
    Porting
+   Ofono
 
 .. toctree::   
    :maxdepth: 1  
