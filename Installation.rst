@@ -112,3 +112,23 @@ and then from adb shell, run the following:
     resize2fs -f /data/rootfs.img 1024000
 
 This will double the size of the rootfs.
+
+Backup and restore
+^^^^^^^^^^^^^^^^^^
+While working on Plasma Mobile, you may need a full backup of your system. To make a full root file system backup:
+
+- Enter recovery mode: press volume down + power button to enter fast boot mode, then select recovery mode.
+
+- To make a backup copy, execute:
+
+::
+
+    adb pull /data/rootfs.img
+
+- When you need to restore, execute:
+
+::
+
+    adb push my-backup-image.img /data/
+
+where my-backup-image.img is the local backup copy of your root file system.
