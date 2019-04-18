@@ -132,3 +132,5 @@ While working on Plasma Mobile, you may need a full backup of your system. To ma
     adb push my-backup-image.img /data/
 
 where my-backup-image.img is the local backup copy of your root file system.
+
+.. attention:: By following this process you make a backup copy of the Plasma Mobile rootfs, and not a full backup of the partitions of your device.
