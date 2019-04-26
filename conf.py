@@ -17,6 +17,8 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 import datetime
+import requests
+from sphinx.util.console import bold
 
 # -- Project information -----------------------------------------------------
 
@@ -39,8 +41,7 @@ release = ''
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-]
+extensions = ['sphinxcontrib.doxylink']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -164,3 +165,14 @@ texinfo_documents = [
 def setup(app):
     app.add_stylesheet('css/breeze.css')
     app.add_stylesheet('css/custom.css')
+
+# doxylink
+doxylink = {
+        'kirigamiapi': ('Kirigami2.tags', 'https://api.kde.org/frameworks/kirigami/html/')
+}
+
+for doc in doxylink.values():
+	print(bold("Downloading file {} to {}".format(doc[1] + "/" + doc[0], doc[0])))
+	tagFile = open(doc[0], "w")
+	tagFile.write(requests.get(doc[1] + "/" + doc[0]).text)
+	tagFile.close()
