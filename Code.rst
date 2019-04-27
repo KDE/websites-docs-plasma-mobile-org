@@ -58,6 +58,7 @@ Plasma phone components
 
 These additional git modules are useful for smartphones:
 
+-  `simplelogin <https://invent.kde.org/bshah/simplelogin>`_: Display manager for launching the plasma-phone shell
 -  `plasma-phone-components <https://invent.kde.org/kde/plasma-phone-components>`_: Dialer and Phone shell QtQuick code,
    application launcher model, etc.
 
