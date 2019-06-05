@@ -120,16 +120,24 @@ Berna the office worker
 
 Berna is an office worker, she says "*I want to feel safe*".
 
-Berna is working as an office clerk in a big insurance company. Although
-a smart person, she is very unsure when it comes to technology. Berna's
-major work is to check the details of insured events. She writes reports
-for her boss suggesting compensation payouts for the cases she deals
-with. Berna is a very precise person, and always solves her tasks
-accurately.
+.. image:: Berna_small.jpg
+   :scale: 50%
+   :alt: Berna
+   :align: right
 
-Berna twice lost several hours of work because she didn't understand the
-options she was offered. Since then, she has been very careful when
-probing new functionality.
+Berna works as an office clerk in a big insurance company. Although she is a 
+very smart person, she is very often unsure how technology can help her.
+
+Berna's biggest daily task is to check on the details of insurance claims. She 
+writes reports for her boss suggesting compensation payouts for the cases she
+deals with. Berna is a very detail oriented individual, and always resolves her 
+tasks accurately.
+
+Berna lost several hours of work twice because she didn't understand the
+options she was offered with technology. Since then, she has been very careful 
+when testing new functionality in the software she uses. She prefers to keep 
+things simple.
+
 
 Recreational user
 ^^^^^^^^^^^^^^^^^
@@ -137,22 +145,29 @@ Recreational user
 "Susan" is a recreational user, her motto is "*I want to be creative and
 flexible*".
 
-''While Susan seldom uses her computer for work, it has become an
-essential part of her social life. With her computer, she can be
-creative and spread this creativity in the world. She chats with her
-friends, shares music, playlists and other media, creates videos and
-uploads them to her web space, and runs a blog with her own style. She
-can't imagine a life without her laptop.
+.. image:: Susan_small.jpg
+   :scale: 50%
+   :alt: Susan
+   :align: right
 
-Still, she is a fun person and does not want to worry about technical
-details. She expects her machine to work.''
+While Susan seldom uses her computer for work, it has become an
+essential part of her social life. With her computer, she can be
+creative and spread this creativity to the world.
+
+She chats with her friends, shares music, playlists and other media,
+creates videos and uploads them to her web space, and runs a blog with
+her own style. She can't imagine a life without her laptop.
+
+She is a fun person and does not want to worry about technical
+details. She expects her machine to work.
+
 
 Human Interface Guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We are currently working on extending KDE's `Human Interface
-Guidelines <https://techbase.kde.org/Projects/Usability/HIG>`__ also for
-mobile devices. This is an area where your expertise and help would be
+We are currently working on extending KDE's 
+`Human Interface Guidelines <https://hig.kde.org>`_ 
+also for mobile devices. This is an area where your expertise and help would be
 much appreciated.
 
 Mockup toolkit
