@@ -223,20 +223,20 @@ So, we are going to substitute the Page component of main.qml of the skeleton ap
 
 ::
 
-   Kirigami.ScrollablePage {
-   
-     title: "Address book (prototype)"
-     
-     Kirigami.CardsGridView {
-        id: view
+    Kirigami.ScrollablePage {
+    
+        title: "Address book (prototype)"
         
-        model: ListModel {
-            id: mainModel
+        Kirigami.CardsGridView {
+            id: view
+            
+            model: ListModel {
+                id: mainModel
+            }
+            
+            delegate: card
         }
-                
-        delegate: card
-     }
-   }
+    }
 
 What we have done so far is to create a :kirigamiapi:`ScrollablePage <ScrollablePage>` and put into it a :kirigamiapi:`CardsGridView <CardsGridView>`, since we want to display a grid of Cards generated from a model. The data of each contact is provided by a `ListModel <https://doc.qt.io/qt-5/qml-qtqml-models-listmodel.html>`_ while the card delegate is responsible for the presentation of the data. For more info about models and views in Qt Quick, see `here <https://doc.qt.io/qt-5/qtquick-modelviewsdata-modelview.html>`_.
 
@@ -350,6 +350,7 @@ As a last step we will add some dummy functionality to each card. In particular,
                 }                                        
             ]
         }
+    }
 
 
 So, we added an `action <https://api.kde.org/frameworks/kirigami/html/classorg_1_1kde_1_1kirigami_1_1Action.html>`_  that, as soon as it is triggered (by pressing the action button), a `passive notification <https://api.kde.org/frameworks/kirigami/html/classorg_1_1kde_1_1kirigami_1_1AbstractApplicationWindow.html#a0a31a7c36993433b260f27ef9b7b9be1>`_ is displayed.
