@@ -51,7 +51,8 @@ provide touch-friendly functionality.
 -  *mtp-server*: Fork of Ubuntu's MTP server
 -  `kaidan <https://git.kaidan.im/kaidan/kaidan>`_: XMPP based Messenger.
 -  `qmlkonsole <https://invent.kde.org/jbbgameich/qmlkonsole>`_: Terminal application.
--  `peruse <https://cgit.kde.org/peruse.git>`_: A comic book viewer
+-  `peruse <https://cgit.kde.org/peruse.git>`_: A comic book viewer.
+-  `calindori <https://invent.kde.org/dkardarakos/calindori>`_: Calendar and todo management application.
 
 Plasma phone components
 -----------------------
@@ -61,6 +62,9 @@ These additional git modules are useful for smartphones:
 -  `simplelogin <https://invent.kde.org/bshah/simplelogin>`_: Display manager for launching the plasma-phone shell
 -  `plasma-phone-components <https://invent.kde.org/kde/plasma-phone-components>`_: Dialer and Phone shell QtQuick code,
    application launcher model, etc.
+-  `kpeoplevcard <https://cgit.kde.org/kpeoplevcard.git>`_: Provides the vCard based contact management backend used by the dialer, plasma-phonebook and others.
+-  `plasma-phonebook <https://invent.kde.org/jbbgameich/plasma-phonebook>`_: Contact management application.
+-  `spacebar <https://cgit.kde.org/spacebar.git>`_: Work-in-progress SMS application.
 
 Build the source code
 ---------------------
