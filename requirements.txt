@@ -1,6 +1,6 @@
 alabaster==0.7.12
 Babel==2.7.0
-certifi==2019.3.9
+certifi==2019.6.16
 chardet==3.0.4
 docutils==0.14
 idna==2.8
@@ -14,8 +14,8 @@ pytz==2019.1
 requests==2.22.0
 six==1.12.0
 snowballstemmer==1.2.1
-Sphinx==2.1.0
+Sphinx==2.1.2
 sphinx-rtd-theme==0.4.3
 sphinxcontrib-websupport==1.1.2
 urllib3==1.25.3
-git+https://github.com/sphinx-contrib/doxylink@master#egg=sphinxcontrib-doxylink
+sphinxcontrib-doxylink==1.6.1
