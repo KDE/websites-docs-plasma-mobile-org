@@ -54,6 +54,14 @@ a.icon {
     box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
 }
 
+.wy-nav-top {
+    background-color: #27ae60;
+}
+
+.wy-nav-top a:visited {
+    color: #fcfcfc;
+}
+
 .wy-side-nav-search {
     background-color: #27ae60 !important;
 }
