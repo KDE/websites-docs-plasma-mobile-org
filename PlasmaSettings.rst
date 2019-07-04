@@ -29,7 +29,7 @@ argument to active-settings:
 
 ::
 
-   plasma-settings org.kde.active.settings.time
+   plasma-settings -m kcm_mobile_time
 
 will open the plasma-settings app and load the "Time and Date" module on
 startup.
