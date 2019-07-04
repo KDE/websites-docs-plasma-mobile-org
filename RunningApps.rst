@@ -4,9 +4,9 @@ Execute applications
 This document describes the necessary environment variables and steps
 for running and debugging applications in Plasma Mobile.
 
-It is not necessary for end-users to set these. With a recent Plasma
-Mobile image, applications can be executed from the drawer easily, however this may
-be useful for some development cases.
+It is not necessary for end-users to set these. Applications can be
+executed from the drawer easily, however this may be useful for
+some development cases.
 
 Environment Setup
 -----------------
