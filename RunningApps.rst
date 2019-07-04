@@ -11,8 +11,17 @@ be useful for some development cases.
 Environment Setup
 -----------------
 
-In order to run applications on the device, you need to set up a few
-environment variables:
+In order to run applications on the device, you need to set up your environment
+similar to the environment in which the plasmashell is running:
+
+.. highlight:: bash
+
+::
+
+    export $(cat /proc/$(pidof plasmashell)/environ | tr '\0' '\n')
+
+In case the plasmashell isn't running, you can use this environment
+setup as a replacement:
 
 .. highlight:: bash
 
