@@ -7,7 +7,7 @@ Introduction
 This tutorial teaches you how you can load Plasma settings modules into
 your app, and create your own modules.
 
-Plasma Settings is an app, much like Plasma Desktop's kcmshell that
+Plasma Settings is an app, much like Plasma Desktop's System Settings that
 shows and loads configuration modules. These configuration modules are
 plugins providing a QML package and an optional C++-plugin which exports
 custom-written configuration objects as QObject to the declarative
