@@ -36,8 +36,7 @@ startup.
 
 Architecture
 ~~~~~~~~~~~~
-The Plasma Settings app consists of a number of parts, a Plasma App,
-which loads a QML package providing the chrome for active-settings, a
+The Plasma Settings app consists of a number of parts, a Kirigami app that provides the chrome for plasma-settings, a
 set of Declarative components which encapsulate loading settings modules
 and a set of settings modules, which provide the UI and backend code for
 a specific settings domain (i.e. Time and Date, Browser settings, etc.).
