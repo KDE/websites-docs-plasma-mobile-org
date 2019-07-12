@@ -41,59 +41,6 @@ set of Declarative components which encapsulate loading settings modules
 and a set of settings modules, which provide the UI and backend code for
 a specific settings domain (i.e. Time and Date, Browser settings, etc.).
 
-Integrate a settings module
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In order to integrate a settings module "inline" into your app, you can
-use the SettingsItem component, which comes with the ActiveSettings
-declarative plugin. SettingsItem provides a PageStack (from
-PlasmaComponents) with a bit of additional API, the module property.
-Creating an Item with a settings module is as easy as:
-
-::
-
-
-   import org.kde.active.settings 0.1 as ActiveSettings
-   [...]
-   ActiveSettings.SettingsItem {
-       id: webSettingsItem
-       module: "org.kde.active.settings.time"
-       anchors { ... }
-   }
-
-In order to speed up loading your app, you will want to lazy-load the
-settings module. This is very easy by using the PageStack features that
-SettingsItem encapsulates:
-
-::
-
-   import QtQuick.Controls 2.2 as Controls
-   import org.kde.active.settings 0.1 as ActiveSettings
-   [...]
-   ActiveSettings.SettingsItem {
-       id: settingsItem
-       initialPage: someOtherItem
-       anchors { [...] }
-   }
-
-   Controls.Button {
-       // This button toggles the settings item and someOtherPage
-       [...]
-       onClicked: {
-           if (settingsItem.module != "org.kde.active.settings.web") {
-               settingsItem.module = "org.kde.active.settings.web"
-           } else {
-               // Switching back...
-               settingsItem.replace(someOtherItem);
-           }
-       }
-   }
-
-   Item {
-       id: someOtherItem
-       /* this guy is shown before any module is loaded */
-   }
-
 Create a settings module
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
