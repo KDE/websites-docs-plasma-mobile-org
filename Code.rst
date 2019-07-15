@@ -52,7 +52,7 @@ provide touch-friendly functionality.
 -  `kaidan <https://git.kaidan.im/kaidan/kaidan>`_: XMPP based Messenger.
 -  `qmlkonsole <https://invent.kde.org/jbbgameich/qmlkonsole>`_: Terminal application.
 -  `peruse <https://cgit.kde.org/peruse.git>`_: A comic book viewer.
--  `calindori <https://invent.kde.org/dkardarakos/calindori>`_: Calendar and todo management application.
+-  `calindori <https://invent.kde.org/KDE/calindori>`_: Calendar and todo management application.
 
 Plasma phone components
 -----------------------
