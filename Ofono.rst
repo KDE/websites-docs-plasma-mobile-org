@@ -29,6 +29,7 @@ To set up ofono-phonesim for development:
 
 - start ofonod as root
 - start phonesim
+
   Please note that the binary may be called ofono-phonesim in some distributions.
   ::
 
