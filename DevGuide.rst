@@ -10,11 +10,19 @@ development environment:
 #. Mobile device running plasma mobile
 
 For most tasks you will not need an actual mobile device running Plasma
-Mobile. Moreover, although you may contribute to Plasma Mobile using any
-kind of linux-based development environment , we strongly suggest to use
-the Plasma Mobile pre compiled image, since such an environment will
-make the development much easier and facilitate the testing of your work
-on a machine that emulates a mobile device.
+Mobile. In specific, the development environment needed for working on each task can be found in the description of each `phabricator task <https://phabricator.kde.org/project/view/28/>`__.
+
+General Linux-based development environment
+-------------------------------------------
+When a mobile device is not needed, you may use your Linux distribution for development. In such a case, there are several options offered in order to set up the development environment.
+
+Flatpak
+~~~~~~~
+Flatpak is a framework for distributing Linux applications. You may build a Plasma Mobile application that runs on top of the KDE Application Platform runtime, using the KDE Software Development Kit (the matching SDK of the platform runtime). For more information, please check the `application development <AppDevelopment.html>`__ section.
+
+kdesrc-build
+~~~~~~~~~~~~
+The *kdesrc-build* command line tool downloads, manages, and builds KDE source code repositories. Following the relative `instructions <https://community.kde.org/Get_Involved/development#Set_up_kdesrc-build>`__ you can safely build and install KDE libraries and applications from source, without messing with the installation of your host system.
 
 Plasma Mobile emulated environment
 ----------------------------------
@@ -131,6 +139,8 @@ been ported to many devices. The Plasma Mobile team provides a
 Neon-based rootfs which can be used along with the Halium builds. This
 image is based on the dev-unstable branch of KDE Neon, and always ships
 the latest versions of KDE frameworks, kwin and Plasma Mobile.
+
+.. attention:: If you want to install Plasma Mobile on Nexus 5X, please follow the `installation guide <Installation.html>`__.
 
 To run Plasma Mobile using Halium as hardware adaption layer:
 
