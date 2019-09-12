@@ -79,7 +79,7 @@ app metadata and flatpak packaging.
 Build the application locally
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-::
+.. code-block:: bash
 
    # Install the SDK
    flatpak install flathub org.kde.Sdk//5.12 # Only needs to be done once
@@ -108,7 +108,7 @@ Build the application for the phone
 Make sure your system supports qemu user emulation. If not, you can find
 help for example `here. <https://wiki.debian.org/QemuUserEmulation>`__
 
-::
+.. code-block:: bash
 
    flatpak install flathub org.kde.Sdk/arm/5.12 # Only needs to be done once
    flatpak-builder flatpak-build-phone --repo=arm-phone --arch=arm --force-clean --ccache *.json
@@ -117,11 +117,12 @@ help for example `here. <https://wiki.debian.org/QemuUserEmulation>`__
 Now your app is exported into app.flatpak. You can copy the file to the
 phone using scp:
 
-::
+.. code-block:: bash
 
    scp app.flatpak phablet@10.15.19.82:/home/phablet/app.flatpak
 
-::
+
+.. code-block:: bash
 
    ssh phablet@10.15.19.82
    flatpak install app.flatpak
@@ -134,7 +135,7 @@ Customize the application template
 Edit the files to fit your naming and needs. In each command, replace
 “io.you.newapp” and “newapp” with the id and name you want to use.
 
-::
+.. code-block:: bash
 
    sed -i 's/org.kde.hellokirigami/org.kde.kirigami-tutorial/g;s/[Hh]ello[Kk]irigami/kirigami-tutorial/g' $(find . -name "CMakeLists.txt" -or -name "*.desktop" -or -name "*.xml" -or -name "*.json"  -or -name *.cpp)
 
@@ -155,7 +156,7 @@ flatpak-kde-applications repository.
 
 Paste the following content into the file:
 
-::
+.. code-block:: bash
 
    ID=io.you.newapp
    JSON=io.you.newapp.json
@@ -177,7 +178,7 @@ Rename the prototype
 
 At first, we will change the name used in the plasma-mobile-app-template from hellokirigami to kirigami-tutorial:
 
-::
+.. code-block:: bash
 
    sed -i 's/org.kde.hellokirigami/org.kde.kirigami-tutorial/g;s/[Hh]ello[Kk]irigami/kirigami-tutorial/g' $(find . -name "CMakeLists.txt" -or -name "*.desktop" -or -name "*.xml" -or -name "*.json"  -or -name *.cpp)
 
@@ -221,7 +222,7 @@ We will reuse the most of the code found in the Cards Grid View Gallery `source 
 
 So, we are going to substitute the Page component of main.qml of the skeleton app with the below Scrollable Page:
 
-::
+.. code-block:: qml
 
     Kirigami.ScrollablePage {
     
@@ -242,14 +243,14 @@ What we have done so far is to create a :kirigamiapi:`ScrollablePage <Scrollable
 
 Now let's populate the model that will feed our grid view with data. In :kirigamiapi:`Kirigami.ScrollablePage <ScrollablePage>` definition, just after:
 
-::
+.. code-block:: qml
 
       delegate: card
     }
      
 add the below: 
 
-::
+.. code-block:: qml
 
     Component.onCompleted: {
         mainModel.append({"firstname": "Pablo", "lastname": "Doe", "cellphone": "6300000002", "email" : "jane-doe@example.com", "photo": "qrc:/konqi.jpg"});
@@ -262,7 +263,7 @@ add the below:
 
 The model part of our implementation is ready. Let's proceed to defining a delegate that will be responsible for displaying the data. So, we add the below code to the main.qml page, just after the Component.onCompleted definition:
 
-::
+.. code-block:: qml
 
     Component {
         id: card
@@ -311,7 +312,7 @@ The application should look like this:
 
 As a last step we will add some dummy functionality to each card. In particular, a "call" action will be added. Nevertheless, instead of a real call, a passive notification will be displayed. So, let's change the card Component to the below:
 
-::
+.. code-block:: qml
 
     Component {
         id: card
