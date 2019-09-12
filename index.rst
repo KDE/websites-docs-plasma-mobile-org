@@ -36,6 +36,7 @@ that is open for the community to participate in.*"
    RunningApps
    Porting
    Ofono
+   Contacts
 
 .. toctree::   
    :maxdepth: 1  
