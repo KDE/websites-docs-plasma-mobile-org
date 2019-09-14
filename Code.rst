@@ -53,6 +53,9 @@ provide touch-friendly functionality.
 -  `qmlkonsole <https://invent.kde.org/jbbgameich/qmlkonsole>`_: Terminal application.
 -  `peruse <https://cgit.kde.org/peruse.git>`_: A comic book viewer.
 -  `calindori <https://invent.kde.org/KDE/calindori>`_: Calendar and todo management application.
+-  `plasmatube <https://invent.kde.org/lnj/plasmatube>`_: Work-in-progress youtube client.
+-  `index <https://invent.kde.org/kde/index-fm>`_: File manager.
+-  `pix <https://invent.kde.org/kde/maui-pix>`_: Maui Image Gallery.
 
 Plasma phone components
 -----------------------
