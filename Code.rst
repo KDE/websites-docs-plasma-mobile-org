@@ -63,7 +63,7 @@ These additional git modules are useful for smartphones:
 -  `plasma-phone-components <https://invent.kde.org/kde/plasma-phone-components>`_: Dialer and Phone shell QtQuick code,
    application launcher model, etc.
 -  `kpeoplevcard <https://cgit.kde.org/kpeoplevcard.git>`_: Provides the vCard based contact management backend used by the dialer, plasma-phonebook and others.
--  `plasma-phonebook <https://invent.kde.org/jbbgameich/plasma-phonebook>`_: Contact management application.
+-  `plasma-phonebook <https://invent.kde.org/KDE/plasma-phonebook>`_: Contact management application.
 -  `spacebar <https://cgit.kde.org/spacebar.git>`_: Work-in-progress SMS application.
 
 Build the source code
