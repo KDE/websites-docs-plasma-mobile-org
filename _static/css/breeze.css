@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans'), local('NotoSans'), url(Noto-Sans.ttf) format('truetype');
+}
 
 /* color definitions */
 .iconred {
