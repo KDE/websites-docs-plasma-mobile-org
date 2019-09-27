@@ -170,7 +170,7 @@ def setup(app):
 doxylink = {
         'kirigamiapi': ('Kirigami2.tags', 'https://api.kde.org/frameworks/kirigami/html/'),
         'kpeopleapi': ('KPeople.tags', 'https://api.kde.org/frameworks/kpeople/html/'),
-        'kcontactsapi': ('KContacts.tags', 'https://api.kde.org/kdepim/kcontacts/html/'),
+        'kcontactsapi': ('KContacts.tags', 'https://api.kde.org/frameworks/kcontacts/html/'),
         'kdeclarativeapi': ('KDeclarative.tags', 'https://api.kde.org/frameworks/kdeclarative/html/')
 }
 
