@@ -56,6 +56,8 @@ provide touch-friendly functionality.
 -  `plasmatube <https://invent.kde.org/lnj/plasmatube>`_: Work-in-progress youtube client.
 -  `index <https://invent.kde.org/kde/index-fm>`_: File manager.
 -  `pix <https://invent.kde.org/kde/maui-pix>`_: Maui Image Gallery.
+-  `qrca <https://invent.kde.org/kde/qrca>`_: QR Code scanner.
+-  `keysmith <https://invent.kde.org/kde/keysmith>`_: OTP client.
 
 Plasma phone components
 -----------------------
