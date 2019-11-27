@@ -14,8 +14,8 @@ making calls, receiving, signal strength, send SMS and so on.
 It will not generate any real call,
 but only make the UI think a SIM is working and that a phone call is in progress.
 
-Usually you can install ofono-phonesim from the package manager of your distribution.
-If it's not available, you can compile it from `source <https://git.kernel.org/pub/scm/network/ofono/phonesim.git>`_.
+The current stable release of phonesim is still based on Qt4, therefore we recommend compiling the Qt5 based `git master branch <https://git.kernel.org/pub/scm/network/ofono/phonesim.git>`_.
+In some cases, you might be able to install ofono-phonesim from your distribution's repository.
 
 To set up ofono-phonesim for development:
 
