@@ -75,3 +75,11 @@ Build the source code
 ---------------------
 
 In order to build Plasma Mobile from source, please refer to the `build instructions <https://community.kde.org/Frameworks/Building>`__.
+
+Improving this documentation
+-----------------------------
+
+This documentation is written using Sphinx and can be edited easily as it is based on plain `reStructuredText <https://en.wikipedia.org/wiki/ReStructuredText>`_. Please open Merge Requests (MR) on:
+
+ - `docs-plasma-mobile-org <https://invent.kde.org/websites/docs-plasma-mobile-org>`_: Plasma Mobile Documentation
+ 
