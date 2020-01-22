@@ -23,7 +23,7 @@ that is open for the community to participate in.*"
    :caption: Using
    :name: sec-using
 
-   Installation
+   HaliumInstallation
 
 .. toctree::
    :maxdepth: 1
