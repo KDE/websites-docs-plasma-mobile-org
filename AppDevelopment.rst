@@ -67,6 +67,8 @@ that is required is a working flatpak and flatpak-builder installation.
 
 To install flatpak on your workstation, follow the official instructions provided `here <https://flatpak.org/setup/>`__.
 
+.. note:: If you prefer to set up the environment yourself instead of using the SDK, see `the KDE Community wiki <https://community.kde.org/Guidelines_and_HOWTOs/CMake#Building_with_CMake_in_short>`__.
+
 .. tip:: Before starting, please ensure that your system is already set up as described `here <https://community.kde.org/Guidelines_and_HOWTOs/Flatpak>`__.
 
 First, clone the app template:
@@ -76,21 +78,49 @@ This repository can be used as a template to develop Plasma Mobile
 applications. It already includes templates for the qml ui, a c++ part,
 app metadata and flatpak packaging.
 
-Build the application locally
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Build the application locally using the KDE flatpak SDK
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Install and build dependencies
+------------------------------
+
+The following command installs the required dependencies into the ``flatpak-build-desktop`` directory.
+It needs to be run each time you change dependencies in your json manifest.
 
 .. code-block:: bash
 
-   # Install the SDK
-   flatpak install flathub org.kde.Sdk//5.12 # Only needs to be done once
+   flatpak-builder --install-deps-from=flathub --stop-at=hellokirigami flatpak-build-desktop *.json
 
-   # Build
-   flatpak-builder flatpak-build-desktop --force-clean --ccache *.json
+Build your application
+----------------------
 
-   # Start
-   export QT_QUICK_CONTROLS_MOBILE=true QT_QUICK_CONTROLS_STYLE=Plasma # Required for making the application look like started on a phone
-   flatpak-builder --run flatpak-build-desktop *.json hellokirigami
+Now that dependencies are installed, you can build your app using the KDE SDK.
+KDE applications typically require an out-of-source build, so let's create a build dependency first.
 
+.. code-block:: bash
+
+   mkdir build
+   cd build
+
+The app template uses the cmake build system, which we can use to generate the necessary files needed to build the application.
+This step works almost like building without the KDE flatpak SDK, except for the addition of ``flatpak build ${FLATPAK_BUILD_DIRECTORY}``.
+
+.. code-block:: bash
+
+   flatpak build ../flatpak-build-desktop cmake .. -DCMAKE_INSTALL_PREFIX:PATH=/app -G Ninja
+
+Finally, we can compile the code using ninja.
+
+.. code-block:: bash
+
+   flatpak build ../flatpak-build-desktop ninja install
+
+You can now run your application in the SDK environment.
+Later ``hellokirigami`` needs to be replaced with the name you chose for your application.
+
+.. code-block:: bash
+
+   flatpak-builder --run ../flatpak-build-desktop ../*.json hellokirigami
 
 If you can see this image:
 
@@ -110,8 +140,7 @@ help for example `here. <https://wiki.debian.org/QemuUserEmulation>`__
 
 .. code-block:: bash
 
-   flatpak install flathub org.kde.Sdk/arm/5.12 # Only needs to be done once
-   flatpak-builder flatpak-build-phone --repo=arm-phone --arch=arm --force-clean --ccache *.json
+   flatpak-builder  --install-deps-from=flathub flatpak-build-phone --repo=arm-phone --arch=arm --force-clean --ccache *.json
    flatpak build-bundle arm-phone hellokirigami.flatpak org.kde.hellokirigami --arch=arm
 
 Now your app is exported into app.flatpak. You can copy the file to the
@@ -137,7 +166,7 @@ Edit the files to fit your naming and needs. In each command, replace
 
 .. code-block:: bash
 
-   sed -i 's/org.kde.hellokirigami/org.kde.kirigami-tutorial/g;s/[Hh]ello[Kk]irigami/kirigami-tutorial/g' $(find . -name "CMakeLists.txt" -or -name "*.desktop" -or -name "*.xml" -or -name "*.json"  -or -name *.cpp)
+   sed -i 's/org.kde.hellokirigami/org.kde.kirigami-tutorial/g;s/[Hh]ello[Kk]irigami/newapp/g' $(find . -name "CMakeLists.txt" -or -name "*.desktop" -or -name "*.xml" -or -name "*.json"  -or -name *.cpp)
 
    for file in $(find . -name "org.kde.hellokirigami*"); do mv $file $(echo $file | sed 's/org.kde.hellokirigami/io.you.newapp/g'); done
 
@@ -160,7 +189,7 @@ Paste the following content into the file:
 
    ID=io.you.newapp
    JSON=io.you.newapp.json
-   GITURL=https://gitlab.com/you/newapp.git
+   GITURL=https://invent.kde.org/you/newapp.git
 
 You can now submit the patch on
 `Phabricator <https://community.kde.org/Infrastructure/Phabricator>`__.
@@ -183,10 +212,10 @@ At first, we will change the name used in the plasma-mobile-app-template from he
    sed -i 's/org.kde.hellokirigami/org.kde.kirigami-tutorial/g;s/[Hh]ello[Kk]irigami/kirigami-tutorial/g' $(find . -name "CMakeLists.txt" -or -name "*.desktop" -or -name "*.xml" -or -name "*.json"  -or -name *.cpp)
 
    for file in $(find . -name "org.kde.hellokirigami*"); do mv $file $(echo $file | sed 's/org.kde.hellokirigami/org.kde.kirigami-tutorial/g'); done
-   
+
 Objective
 ^^^^^^^^^
-Our goal is to create a simple prototype of an address book. We need to display a grid of cards that will show the contacts of our phone. Each card should display the name of the contact, her/his mobile phone and the email address. 
+Our goal is to create a simple prototype of an address book. We need to display a grid of cards that will show the contacts of our phone. Each card should display the name of the contact, her/his mobile phone and the email address.
 
 Kirigami Gallery
 ^^^^^^^^^^^^^^^^
@@ -204,9 +233,9 @@ Navigating through the Kirigami Gallery application, we will stumble upon the "G
    :alt: kirigami components
 
    List of kirigami gallery components
-   
-   
-After selecting the "Grid view of cards" gallery component, we will click to the bottom action and we will get some useful information about the Card and Abstract Card types. 
+
+
+After selecting the "Grid view of cards" gallery component, we will click to the bottom action and we will get some useful information about the Card and Abstract Card types.
 
 .. figure:: kirigami-tutorial-2.png
    :scale: 50 %
@@ -225,16 +254,16 @@ So, we are going to substitute the Page component of main.qml of the skeleton ap
 .. code-block:: qml
 
     Kirigami.ScrollablePage {
-    
+
         title: "Address book (prototype)"
-        
+
         Kirigami.CardsGridView {
             id: view
-            
+
             model: ListModel {
                 id: mainModel
             }
-            
+
             delegate: card
         }
     }
@@ -247,8 +276,8 @@ Now let's populate the model that will feed our grid view with data. In :kirigam
 
       delegate: card
     }
-     
-add the below: 
+
+add the below:
 
 .. code-block:: qml
 
@@ -257,8 +286,8 @@ add the below:
         mainModel.append({"firstname": "Paul", "lastname": "Adams", "cellphone": "6300000003", "email" : "paul-adams@example.com", "photo": "qrc:/katie.jpg"});
         mainModel.append({"firstname": "John", "lastname": "Doe", "cellphone": "6300000001", "email" : "john-doe@example.com", "photo": "qrc:/konqi.jpg"});
         mainModel.append({"firstname": "Ken", "lastname": "Brown", "cellphone": "6300000004", "email" : "ken-brown@example.com", "photo": "qrc:/konqi.jpg"});
-        mainModel.append({"firstname": "Al", "lastname": "Anderson", "cellphone": "6300000005", "email" : "al-anderson@example.com", "photo": "qrc:/katie.jpg"});                        
-        mainModel.append({"firstname": "Kate", "lastname": "Adams", "cellphone": "6300000005", "email" : "kate-adams@example.com", "photo": "qrc:/konqi.jpg"});                        
+        mainModel.append({"firstname": "Al", "lastname": "Anderson", "cellphone": "6300000005", "email" : "al-anderson@example.com", "photo": "qrc:/katie.jpg"});
+        mainModel.append({"firstname": "Kate", "lastname": "Adams", "cellphone": "6300000005", "email" : "kate-adams@example.com", "photo": "qrc:/konqi.jpg"});
     }
 
 The model part of our implementation is ready. Let's proceed to defining a delegate that will be responsible for displaying the data. So, we add the below code to the main.qml page, just after the Component.onCompleted definition:
@@ -298,7 +327,7 @@ The model part of our implementation is ready. Let's proceed to defining a deleg
 
 Following the relative information in the `api page <https://api.kde.org/frameworks/kirigami/html/classorg_1_1kde_1_1kirigami_1_1Card.html>`_ we populate a "banner" (although without an image yet), that will act as a header that will display the name of the contact as well as a contact icon.
 
-The main content of the card has been populated with the cell phone number and the email of the contact, structured as a `column <https://doc.qt.io/qt-5/qml-qtquick-column.html>`_ of `labels <https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html>`_. 
+The main content of the card has been populated with the cell phone number and the email of the contact, structured as a `column <https://doc.qt.io/qt-5/qml-qtquick-column.html>`_ of `labels <https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html>`_.
 
 The application should look like this:
 
@@ -318,37 +347,37 @@ As a last step we will add some dummy functionality to each card. In particular,
         id: card
 
         Kirigami.Card {
-                                    
+
             height: view.cellHeight - Kirigami.Units.largeSpacing
-            
+
             banner {
-                title: model.firstname + " " + model.lastname      
+                title: model.firstname + " " + model.lastname
                 titleIcon: "im-user"
             }
-                    
+
             contentItem: Column {
                 id: content
 
                 spacing: Kirigami.Units.smallSpacing
-                
+
                 Controls.Label {
                     wrapMode: Text.WordWrap
                     text: "Mobile: " + model.cellphone
                 }
-                
+
                 Controls.Label {
                     wrapMode: Text.WordWrap
                     text: "Email: " + model.email
                 }
             }
-                
+
             actions: [
                 Kirigami.Action {
                     text: "Call"
                     icon.name: "call-start"
-                    
+
                     onTriggered: { showPassiveNotification("Calling " + model.firstname + " " + model.lastname + " ...") }
-                }                                        
+                }
             ]
         }
     }
