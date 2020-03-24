@@ -43,6 +43,7 @@ QtQuick and QML
 -  `QML Glossary <https://doc.qt.io/qt-5/qml-glossary.html>`__
 -  `QML Reference <https://doc.qt.io/qt-5/qmlreference.html>`__
 -  `QML types list <https://doc.qt.io/qt-5/qmltypes.html>`__
+-  `QML introduction video series <https://www.youtube.com/playlist?list=PL6CJYn40gN6hdNC1IGQZfVI707dh9DPRc>`__
 
 Kirigami
 ^^^^^^^^
