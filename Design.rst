@@ -204,4 +204,4 @@ community groups and channels check the relative web
 in the relative `Matrix
 room <https://riot.im/app/#/room/#freenode_#kde-vdg:matrix.org>`__. More
 KDE VDG communication channels can be found
-`here <https://community.kde.org/KDE_Visual_Design_Group#Communication>`__.
+`here <https://community.kde.org/Get_Involved/design#Communication_and_Workflow>`__.

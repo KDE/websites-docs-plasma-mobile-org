@@ -5,11 +5,11 @@ Frameworks
 ----------
 
 Plasma Mobile is built on top of `KDE
-Frameworks <https://projects.kde.org/projects/frameworks>`__. You can
+Frameworks <https://kde.org/products/frameworks/>`__. You can
 find download links for the stable releases of these on
-`download.kde.org <http://download.kde.org/stable/frameworks/>`__ and
+`download.kde.org <https://download.kde.org/stable/frameworks/>`__ and
 its API documentation
-`here <http://api.kde.org/frameworks-api/frameworks5-apidocs/>`__.
+`here <https://api.kde.org/>`__.
 
 Plasma
 ------
@@ -26,13 +26,13 @@ plasma-mobile and friends. None of the repositories conflicts with
 others, so it's possible to provide a system with UIs for multiple
 formfactors, and decide at runtime, which UI to offer. You can find the
 source code tarballs of the stable releases of Plasma on
-`download.kde.org <http://download.kde.org/stable/plasma/>`_ or check the git
+`download.kde.org <https://download.kde.org/stable/plasma/>`_ or check the git
 repositories on `cgit.kde.org <https://cgit.kde.org/>`_.
 
 Plasma Mobile
 -------------
 Plasma Mobile does not have stable release yet. So, we advise you to pull
-the code directly from our git repositories' master branches at `invent.kde.org <https://invent.kde.org/>`_. In the following section you may find direct links to the source code of several Plasma Mobile components.
+the code directly from our git repositories' master branches at `invent.kde.org <https://invent.kde.org/public/>`_. In the following section you may find direct links to the source code of several Plasma Mobile components.
 
 General mobile components
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,10 +49,10 @@ provide touch-friendly functionality.
 -  `plasma-angelfish <https://cgit.kde.org/plasma-angelfish.git>`_: Webbrowser for phones.
 -  *plasma-samegame*: Small example game, pure QML.
 -  *mtp-server*: Fork of Ubuntu's MTP server
--  `kaidan <https://git.kaidan.im/kaidan/kaidan>`_: XMPP based Messenger.
+-  `kaidan <https://invent.kde.org/kde/kaidan>`_: XMPP based Messenger.
 -  `qmlkonsole <https://invent.kde.org/jbbgameich/qmlkonsole>`_: Terminal application.
 -  `peruse <https://cgit.kde.org/peruse.git>`_: A comic book viewer.
--  `calindori <https://invent.kde.org/KDE/calindori>`_: Calendar and todo management application.
+-  `calindori <https://invent.kde.org/kde/calindori>`_: Calendar and todo management application.
 -  `plasmatube <https://invent.kde.org/lnj/plasmatube>`_: Work-in-progress youtube client.
 -  `index <https://invent.kde.org/kde/index-fm>`_: File manager.
 -  `pix <https://invent.kde.org/kde/maui-pix>`_: Maui Image Gallery.

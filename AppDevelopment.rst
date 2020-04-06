@@ -39,7 +39,7 @@ QtQuick and QML
 -  `QML Applications <https://doc.qt.io/qt-5/qmlapplications.html>`__
 -  `First Steps with QML <https://doc.qt.io/qt-5/qmlfirststeps.html>`__
 -  `Getting Started Programming with Qt
-   Quick <https://doc.qt.io/qt-5/gettingstartedqml.html>`__
+   Quick <https://doc.qt.io/qt-5/qtdoc-tutorials-alarms-example.html>`__
 -  `QML Glossary <https://doc.qt.io/qt-5/qml-glossary.html>`__
 -  `QML Reference <https://doc.qt.io/qt-5/qmlreference.html>`__
 -  `QML types list <https://doc.qt.io/qt-5/qmltypes.html>`__
