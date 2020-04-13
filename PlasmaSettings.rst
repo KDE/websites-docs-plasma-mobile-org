@@ -4,165 +4,204 @@ Settings module development
 Introduction
 ~~~~~~~~~~~~
 
-This tutorial teaches you how you can and create your own modules.
+Settings in Plasma are provided by Configuration Modules (KCM). These can be loaded by multiple wrapper applications
+such as ``systemsettings5`` on the desktop, ``plasma-settings`` on mobile or ``kcmshell5`` for standalone config windows.
 
-Plasma Settings is an app, much like Plasma Desktop's System Settings that
-shows and loads configuration modules. These configuration modules are
-plugins providing a QML package and an optional C++-plugin which exports
-custom-written configuration objects as QObject to the declarative
-environment.
+You can query the available KCMs using ``kcmshell5 --list``. To load an individual module in a standalone window pass its
+name to kcmshell5, e.g. ``kcmshell5 kcm_kaccounts``. To open it in plasma-settings use the ``-m`` parameter, e.g. ``plasma-settings -m kcm_kaccounts``.
 
-You can query available modules using the --list argument to
-plasma-settings:
+Basic KCM
+~~~~~~~~~
 
-::
+KCMs consist of a KPackage holding the QML UI and a C++ library holding the logic. Some legacy KCMs are based on QtWidgets,
+however this is not recommended for new KCMs and it's not possible to load these in ``plasma-settings``.
 
-   $ plasma-settings --list
-   kcm_mobile_time ........... Timezone, Date Display
-   kcm_mobile_power .......... Lock, Sleep, Timeout
-   kcm_mobile_theme .......... Font and Theme
-   kcm_mobile_kaccounts ...... Add Your Online Accounts
-
-You can load an individual module by supplying its plugin name as
-argument to plasma-settings:
-
-::
-
-   plasma-settings -m kcm_mobile_time
-
-will open the plasma-settings app and load the "Time and Date" module on
-startup.
-
-Architecture
-~~~~~~~~~~~~
-The Plasma Settings app consists of a number of parts, a Kirigami app that provides the chrome for plasma-settings
-and a set of settings modules, which provide the UI and backend code for
-a specific settings domain (i.e. Time and Date, Theme settings, etc.).
-
-Create a settings module
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Module architecture
--------------------
-
-A settings module nowadays consists of a library and a QML ui.
-
-The basic structure of a settings module is the following:
+The basic structure of a hypothetical time settings module is the following:
 
 ::
 
    ├── CMakeLists.txt
    ├── timesettings.{cpp,h}
-   ├── timesettings.desktop
    └── package
        ├── metadata.desktop
        └── contents/ui
            └── Time.qml
 
 
-Step-by-step guide
-------------------
-This documentation uses examples from different existing config modules,
-so make sure to always change the names to what fits your module.
-
-In its desktop file, a module has to specify some basic values to be recognized as a config module.
-Those have to be added in addition to the usual contents of a desktop file.
-
-::
-
-    Type=Service
-    X-KDE-ServiceTypes=KCModule
-
-Since every module has to provide a library, it must also be specified in the desktop file.
-
-::
-
-    X-KDE-Library=kcm_mobile_time
-
-If your module is only useful for e.g embedded devices, make sure to hide it on all unrelated platforms.
-
-::
-
-    X-KDE-FormFactors=handset,tablet,mediacenter
-
-
-To build and install your kcm, you will need to write a CMakeLists.txt file.
-The special features of a settings module can be best explained on this example:
-
+CMakeLists.txt
+--------------
 .. code-block:: cmake
 
-    set(accountsettings_SRCS # Specify source files for the library
-        accounts.cpp
+    set(timesettings_SRCS # Specify source files for the library
+        timesettings.cpp
     )
 
-    add_library(kcm_mobile_kaccounts MODULE ${accountsettings_SRCS})
+    add_library(kcm_time MODULE ${timesettings_SRCS})
 
-    target_link_libraries(kcm_mobile_kaccounts
+    target_link_libraries(kcm_time
         Qt5::Core
         KF5::CoreAddons
         KF5::I18n
         KF5::QuickAddons
     )
 
-    kcoreaddons_desktop_to_json(kcm_mobile_kaccounts "accountssettings.desktop") # Convert our desktop file to json
+    kcoreaddons_desktop_to_json(kcm_time "package/metadata.desktop")
 
-    install(TARGETS kcm_mobile_kaccounts DESTINATION ${KDE_INSTALL_PLUGINDIR}/kcms) # Install the library to the kcm location
+    install(TARGETS kcm_time DESTINATION ${KDE_INSTALL_PLUGINDIR}/kcms) # Install the library to the kcm location
 
-    install(FILES accountssettings.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR}) # Install the desktop file
-    kpackage_install_package(package kcm_mobile_kaccounts kcms) # Finally install our QML kpackage.
+    install(FILES package/metadata.desktop RENAME timesettings.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR}) # Install the desktop file
+    kpackage_install_package(package kcm_time kcms) # Install our QML kpackage.
 
+timesettings.h
+--------------
+.. code-block:: c++
 
-Make sure the names of the .desktop files in CMakeLists.txt are correct,
-since incorrect names lead to problems finding and loading your package,
-or even to conflicts between different modules. In case of doubt check
-``plasma-settings --list`` for already installed modules.
+    /*
+        SPDX-FileCopyrightText: Year Author <author@domanin.com>
+        SPDX-License-Identifier: GPL-2.0-or-later
+    */
 
-The json file generated by cmake will be used as metadata for the library we yet have to create.
-It consists of a class inheriting from :kdeclarativeapi:`ConfigModule::ConfigModule(QObject *parent, const QVariantList &args)`.
+    #ifndef TIMESETTINGS_H
+    #define TIMESETTINGS_H
 
-In the cpp file after the includes add
+    #include <KQuickAddons/ConfigModule>
 
-.. code-block:: cpp
+    class TimeSettings : public KQuickAddons::ConfigModule
+    {
+        Q_OBJECT
+    public:
+        TimeSettings(QObject *parent, const QVariantList &args);
+        ~TimeSettings() override;
 
-    K_PLUGIN_CLASS_WITH_JSON(AccountsSettings, "accountssettings.json")
+    public Q_SLOTS:
+        void defaults() final;
+        void load() final;
+        void save() final;
+    };
 
+    #endif
 
-Now that we have created the library, let's have a closer look at the QML kpackage.
-Every package needs to contain a metadata.desktop file, which holds the plugin information,
-which script to load from the plugin initially, and a bunch of metadata, just like
-normal Plasma Packages. A simple metadata.desktop file will look like
-this:
+:kdeclarativeapi:`KQuickAddons::ConfigModule` serves as the base class for all QML-based KCMs. Please consult the API documentation for a full description.
 
+timesettings.cpp
+----------------
+.. code-block:: c++
+
+    /*
+        SPDX-FileCopyrightText: Year Author <author@domain.com>
+        SPDX-License-Identifier: GPL-2.0-or-later
+    */
+
+    #include "timesettings.h"
+
+    #include <KPluginFactory>
+    #include <KLocalizedString>
+    #include <KAboutData>
+
+    K_PLUGIN_CLASS_WITH_JSON(TimeSettings, "metadata.json")
+
+    TimeSettings::TimeSettings(QObject *parent, const QVariantList &args)
+        : KQuickAddons::ConfigModule(parent, args)
+    {
+        KAboutData *aboutData = new KAboutData("kcm_time",
+                                            i18nc("@title", "Audio"),
+                                            "0.1",
+                                            QStringLiteral(""),
+                                            KAboutLicense::LicenseKey::GPL_V2,
+                                            i18nc("@info:credit", "Copyright Year Author"));
+
+        aboutData->addAuthor(i18nc("@info:credit", "Author"),
+                            i18nc("@info:credit", "Author"),
+                            QStringLiteral("author@domain.com"));
+
+        setAboutData(aboutData);
+        setButtons(Help);
+    }
+
+    TimeSettings::~TimeSettings()
+    {
+    }
+
+    void TimeSettings::load()
+    {
+    }
+
+    void TimeSettings::save()
+    {
+    }
+
+    void TimeSettings::defaults()
+    {
+    }
+
+    #include "timesettings.moc"
+
+package/metadata.desktop
+------------------------
 ::
 
-   [Desktop Entry]
-   Name=Web and Browser
-   Comment=Settings for history, caching, etc.
-   Encoding=UTF-8
-   Type=Service
-   Icon=preferences-system-network
-   X-KDE-PluginInfo-Author=Sebastian Kügler
-   X-KDE-PluginInfo-Email=sebas@kde.org
-   X-KDE-PluginInfo-Name=kcm_mobile_web
-   X-KDE-PluginInfo-Version=1.0
-   X-KDE-PluginInfo-Website=http://plasma-mobile.org
-   X-KDE-PluginInfo-Category=Online Services
-   X-KDE-PluginInfo-License=GPL
-   X-Plasma-MainScript=ui/Web.qml
+    [Desktop Entry]
+    Name=Time
+    Comment=Configure Time
+    Encoding=UTF-8
+    Type=Service
+    Icon=preferences-system-time
+    X-KDE-Library=kcm_time
+    X-KDE-ServiceTypes=KCModule
+    X-KDE-FormFactors=desktop,handset,tablet,mediacenter
+    X-Plasma-MainScript=ui/Time.qml
+    X-KDE-System-Settings-Parent-Category=personalization
+    X-KDE-Keywords=Time,Date,Clock
+    X-KDE-ParentApp=kcontrol
 
-It needs to be placed in :code:`./package/metadata.desktop`.
+Example metadata file
 
-The interesting bits are the plugin name, the package name and the mainscript. The plugin name is used to find the
-package.
-Web.qml points to a normal `Item <https://doc.qt.io/qt-5/qml-qtquick-item.html>`__ in a file, normal rules apply
-here.
+| ``Name`` defines the name of the KCM which is shown in the settings app.
+| ``Description`` is a short, one sentence description of the module.
+| ``X-KDE-Library`` must match the library name defined in CMakeLists.txt.
+| ``X-KDE-FormFactors`` defines on which kinds of devices this KCM should be shown.
+| ``X-Plasma-MainScript`` points to the main QML file in the KPackage.
+| ``X-KDE-System-Settings-Parent-Category`` defines the category systemsettings5 is showing the module in.
+| ``X-KDE-Keywords`` defines Keywords used for searching modules.
 
-It's recommended to use :kdeclarativeapi:`ScrollViewKCM` or :kdeclarativeapi:`SimpleKCM` as the root item of your QML file,
-so your kcm visually fits into the settings app.
+package/contents/ui/Time.qml
+----------------------------
+::
 
-The :kdeclarativeapi:`ConfigModule` class that your library inherits from
-provides a multilevel page api that you can use to push and pop pages into and from the settings app.
+    /*
+        SPDX-FileCopyrightText: 2020 Nicolas Fella <nicolas.fella@gmx.de>
+        SPDX-License-Identifier: GPL-2.0-or-later
+    */
 
-:kdeclarativeapi:`ConfigModule::push` pushes a QML file into the page row,
-while :kdeclarativeapi:`ConfigModule::pop` removes the last page of the row.
-Please not that there is no such function as replace as known from Kirigami.
+    import QtQuick 2.12
+    import QtQuick.Controls 2.12 as Controls
+
+    import org.kde.kirigami 2.7 as Kirigami
+    import org.kde.kcm 1.2
+
+    SimpleKCM {
+
+        Controls.Label {
+            text: "Configure Time"
+        }
+    }
+
+Basic KCM QML file
+
+Depending on the content use one of the following root type:
+    - Use :kdeclarativeapi:`ScrollViewKCM` for content that is vertically scrollable, such as ListView.
+    - Use :kdeclarativeapi:`GridViewKCM` for arranging selectable items in a grid.
+    - Use :kdeclarativeapi:`SimpleKCM` otherwise.
+
+Multi-page KCM
+~~~~~~~~~~~~~~
+
+KCMs can consist of multiple pages that are dynamically opened and closed. To push another page use
+::
+
+    kcm.push("AnotherPage.qml")
+
+AnotherPage.qml should have one of the above types as root element. To pop a page use
+::
+
+    kcm.pop()
