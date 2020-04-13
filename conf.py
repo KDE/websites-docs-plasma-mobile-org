@@ -21,6 +21,8 @@ import requests
 import aether_sphinx
 from sphinx.util.console import bold
 
+import os.path
+
 # -- Project information -----------------------------------------------------
 
 project = 'Plasma Mobile'
@@ -169,7 +171,8 @@ doxylink = {
 }
 
 for doc in doxylink.values():
-	print(bold("Downloading file {} to {}".format(doc[1] + "/" + doc[0], doc[0])))
-	tagFile = open(doc[0], "w")
-	tagFile.write(requests.get(doc[1] + "/" + doc[0]).text)
-	tagFile.close()
+	if not os.path.isfile(doc[0]):
+		print(bold("Downloading file {} to {}".format(doc[1] + "/" + doc[0], doc[0])))
+		tagFile = open(doc[0], "w")
+		tagFile.write(requests.get(doc[1] + "/" + doc[0]).text)
+		tagFile.close()
