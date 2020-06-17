@@ -19,9 +19,11 @@
 import datetime
 import requests
 import aether_sphinx
+from sphinx.application import Sphinx
 from sphinx.util.console import bold
 
 import os.path
+from shutil import copyfile
 
 # -- Project information -----------------------------------------------------
 
@@ -94,7 +96,9 @@ html_logo = "logo.svg"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['Installation.html']
+html_static_path = []
+
+redirect_files = ['Installation.html']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -181,3 +185,15 @@ for doc in doxylink.values():
 		tagFile = open(doc[0], "w")
 		tagFile.write(requests.get(doc[1] + "/" + doc[0]).text)
 		tagFile.close()
+
+
+def copy_legacy_redirects(app, docname): # Sphinx expects two arguments
+    if app.builder.name == 'html':
+        for html_src_path in redirect_files:
+            target_path = app.outdir + '/' + html_src_path
+            src_path = app.srcdir + '/' + html_src_path
+        if os.path.isfile(src_path):
+            copyfile(src_path, target_path)
+
+def setup(app):
+    app.connect('build-finished', copy_legacy_redirects)
