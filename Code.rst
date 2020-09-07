@@ -27,7 +27,7 @@ others, so it's possible to provide a system with UIs for multiple
 formfactors, and decide at runtime, which UI to offer. You can find the
 source code tarballs of the stable releases of Plasma on
 `download.kde.org <https://download.kde.org/stable/plasma/>`_ or check the git
-repositories on `cgit.kde.org <https://cgit.kde.org/>`_.
+repositories on `invent.kde.org <https://invent.kde.org/plasma>`_.
 
 Plasma Mobile
 -------------
@@ -41,17 +41,17 @@ provide touch-friendly functionality.
 
 -  `plasma-settings <https://invent.kde.org/kde/plasma-settings>`_: Settings application and modules.
 -  `plasma-camera <https://invent.kde.org/kde/plasma-camera>`_: Camera application.
--  `marble <https://cgit.kde.org/marble.git/>`_: Maps application.
--  `koko <https://cgit.kde.org/koko.git/>`_: Gallery application.
--  `vvave <https://cgit.kde.org/vvave.git/>`_: Music player.
--  `okular <https://cgit.kde.org/okular.git/>`_: Document Viewer.
--  `discover <https://cgit.kde.org/discover.git>`_: Software Center.
--  `plasma-angelfish <https://cgit.kde.org/plasma-angelfish.git>`_: Webbrowser for phones.
--  *plasma-samegame*: Small example game, pure QML.
--  *mtp-server*: Fork of Ubuntu's MTP server
+-  `marble <https://invent.kde.org/education/marble>`_: Maps application.
+-  `koko <https://invent.kde.org/graphics/koko>`_: Gallery application.
+-  `vvave <https://invent.kde.org/maui/vvave>`_: Music player.
+-  `okular <https://invent.kde.org/graphics/okular>`_: Document Viewer.
+-  `discover <https://invent.kde.org/plasma/discover>`_: Software Center.
+-  `plasma-angelfish <https://invent.kde.org/plasma-mobile/plasma-angelfish>`_: Webbrowser for phones.
+-  `plasma-samegame <https://invent.kde.org/plasma-mobile/plasma-samegame>`_: Small example game.
+-  `mtp-server <https://invent.kde.org/plasma-mobile/mtp-server>`_: Fork of Ubuntu's MTP server
 -  `kaidan <https://invent.kde.org/kde/kaidan>`_: XMPP based Messenger.
 -  `qmlkonsole <https://invent.kde.org/jbbgameich/qmlkonsole>`_: Terminal application.
--  `peruse <https://cgit.kde.org/peruse.git>`_: A comic book viewer.
+-  `peruse <https://invent.kde.org/graphics/peruse>`_: A comic book viewer.
 -  `calindori <https://invent.kde.org/kde/calindori>`_: Calendar and todo management application.
 -  `plasmatube <https://invent.kde.org/lnj/plasmatube>`_: Work-in-progress youtube client.
 -  `index <https://invent.kde.org/kde/index-fm>`_: File manager.
@@ -68,9 +68,9 @@ These additional git modules are useful for smartphones:
 -  `plasma-phone-components <https://invent.kde.org/kde/plasma-phone-components>`_: Phone shell QtQuick code,
    application launcher model, etc.
 -  `plasma-dialer <https://invent.kde.org/kde/plasma-dialer>`_: Dialer application
--  `kpeoplevcard <https://cgit.kde.org/kpeoplevcard.git>`_: Provides the vCard based contact management backend used by the dialer, plasma-phonebook and others.
+-  `kpeoplevcard <https://invent.kde.org/pim/kpeoplevcard>`_: Provides the vCard based contact management backend used by the dialer, plasma-phonebook and others.
 -  `plasma-phonebook <https://invent.kde.org/KDE/plasma-phonebook>`_: Contact management application.
--  `spacebar <https://cgit.kde.org/spacebar.git>`_: Work-in-progress SMS application.
+-  `spacebar <https://invent.kde.org/plasma-mobile/spacebar>`_: Work-in-progress SMS application.
 
 Build the source code
 ---------------------

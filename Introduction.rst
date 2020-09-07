@@ -105,7 +105,7 @@ Where can I find...
 ~~~~~~~~~~~~~~~~~~~
 
 The code for various Plasma Mobile components can be found on
-`git.kde.org <https://cgit.kde.org>`__.
+`invent.kde.org <https://invent.kde.org/plasma-mobile>`__.
 See `Get the source code <https://docs.plasma-mobile.org/Code.html>`__ for the individual repositories.
 
 You can also ask your questions in the `Plasma Mobile community groups
