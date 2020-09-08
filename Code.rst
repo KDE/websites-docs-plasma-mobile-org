@@ -64,6 +64,7 @@ provide touch-friendly functionality.
 -  `trainer <https://invent.kde.org/plasma-mobile/trainer>`_: Sport exercises helper.
 -  `alligator <https://invent.kde.org/plasma-mobile/alligator>`_: RSS feeds reader.
 -  `krecorder <https://invent.kde.org/plasma-mobile/krecorder>`_: Audio recorder.
+-  `kontrast <https://invent.kde.org/accessibility/kontrast>`_: Tool to check contrast for colors.
 
 Plasma phone components
 -----------------------
