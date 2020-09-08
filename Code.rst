@@ -58,6 +58,12 @@ provide touch-friendly functionality.
 -  `pix <https://invent.kde.org/kde/maui-pix>`_: Maui Image Gallery.
 -  `qrca <https://invent.kde.org/kde/qrca>`_: QR Code scanner.
 -  `keysmith <https://invent.kde.org/kde/keysmith>`_: OTP client.
+-  `kweather <https://invent.kde.org/plasma-mobile/kweather>`_: Weather app.
+-  `kclock <https://invent.kde.org/plasma-mobile/kclock>`_: Clock app.
+-  `kalk <https://invent.kde.org/plasma-mobile/kalk>`_: Calculator and units converter.
+-  `trainer <https://invent.kde.org/plasma-mobile/trainer>`_: Sport exercises helper.
+-  `alligator <https://invent.kde.org/plasma-mobile/alligator>`_: RSS feeds reader.
+-  `krecorder <https://invent.kde.org/plasma-mobile/krecorder>`_: Audio recorder.
 
 Plasma phone components
 -----------------------
