@@ -177,12 +177,7 @@ Upload application to repository
 Once your application is working and is usable, you can submit a patch
 to include it into the KDE flatpak repository.
 
-After setting up git with the recommended `KDE
-settings <https://community.kde.org/Infrastructure/Git#Pushing>`__, you
-can create a new file io.you.newapp.remoteapp in the
-flatpak-kde-applications repository.
-
-``git clone kde:flatpak-kde-applications && cd flatpak-kde-applications``
+``git clone https://invent.kde.org/packaging/flatpak-kde-applications && cd flatpak-kde-applications``
 
 Paste the following content into the file:
 
@@ -192,9 +187,8 @@ Paste the following content into the file:
    JSON=io.you.newapp.json
    GITURL=https://invent.kde.org/you/newapp.git
 
-You can now submit the patch on
-`Phabricator <https://community.kde.org/Infrastructure/Phabricator>`__.
-Once accepted, your app will be automatically built, published and made
+
+Once your merge request is accepted, your app will be automatically built, published and made
 available in Discover (if the KDE flatpak repository is enabled on the
 device).
 
