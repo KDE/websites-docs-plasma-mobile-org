@@ -5,7 +5,16 @@ What is Plasma Mobile?
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Plasma Mobile offers a free (as in freedom and beer), user-friendly,
-privacy-enabling and customizable platform for mobile devices. Based on
+privacy-enabling and customizable platform for mobile devices. It is
+shipped by different distributions (ex. postmarketOS, Manjaro, Neon),
+and can run on the devices that are supported by the distribution. Most
+of the testing is done on the pinephone, as it is easier for developers 
+to obtain and develop on. However, depending on your distribution, you 
+may be able to install it on your device!
+
+**Note:** Halium support has been dropped from Neon images due to a lack of developers working on it.
+
+Based on
 the `Halium <https://halium.org/>`__ project, we have an official
 installable prototype for the Nexus 5X device. However, Plasma Mobile
 is under heavy development and unfortunately cannot be used as a daily
@@ -32,8 +41,11 @@ in their products.
 Can I use it?
 ~~~~~~~~~~~~~
 
-Official Plasma Mobile images based on Halium and KDE Neon Git-Unstable
-are provided. We mainly test and support the Nexus 5X at
+Development Plasma Mobile images based KDE Neon Git-Unstable
+are provided. You can also consider using other distributions, like
+postmarketOS and Manjaro ARM.
+
+We mainly test and support the Pinephone at
 this time, but you can potentially install it on any device supported by
 Halium. These Halium images are where most current development is
 happening, and scripts are supplied to ease installation of the Plasma
@@ -81,21 +93,9 @@ keep this list updated but it may be inaccurate at times.)
 Other software can be installed from Discover. Any Qt5 app (including
 software designed for the desktop, such as Calligra) will run without
 many issues, though it will still be difficult to use on a touch
-display. Currently, software built with the GTK toolkit *will* run, but
-with major scaling issues, and without any support for the on-screen
-keyboard. If possible, use software built with Kirigami for best
-results.
-
-You cannot currently connect to the cell network, and as such, you
-cannot make calls or texts. Similarly, data is also non-functional.
-However, a full-featured dialer is included, and we are currently
-exploring options for integrating SMS. Once the relevant pieces are put
-in for cell connections, you should be able to immediately make calls
-with the current dialer.
-
-Supported features of the Nexus 5X include the camera,
-Wi-FI, battery monitoring and power settings, and audio (including
-hardware volume buttons).
+display. GTK software can also run as well, though for mobile optimization
+they will need to have implemented libhandy. If possible, use software 
+built with Kirigami for best results.
 
 A list of most known issues with the current "edge" rootfs can be found
 `here <https://notes.kde.org/public/plamo-testing>`__ and
