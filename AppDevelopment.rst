@@ -48,6 +48,7 @@ QtQuick and QML
 Kirigami
 ^^^^^^^^
 
+- `Kirigami Tutorials <https://develop.kde.org/docs/kirigami/>`__
 -  `Kirigami Human Interface
    Guidelines <https://community.kde.org/KDE_Visual_Design_Group/KirigamiHIG>`__
 -  `Kirigami
