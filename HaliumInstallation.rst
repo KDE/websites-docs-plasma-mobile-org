@@ -1,9 +1,9 @@
 Installation
 =========================================
 
-In this page you will find detailed instructions about flashing Plasma Mobile to your mobile phone.
+In this page you will find detailed instructions about flashing Plasma Mobile to your mobile phone. If you are using the pinephone, you can bypass this tutorial and follow the instructions here instead: <https://wiki.pine64.org/index.php/PinePhone_Installation_Instructions>.
 
-.. tip::  Before proceeding, please ensure that you have installed adb and fastboot on you workstation
+.. tip::  Before proceeding, please ensure that you have installed adb and fastboot on your workstation
 
 If you flash Plasma Mobile for the first time, you likely need to follow
 steps 1A and 1B.
