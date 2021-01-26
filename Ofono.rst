@@ -23,7 +23,6 @@ To set up ofono-phonesim for development:
   ::
 
      [phonesim]
-     Driver=phonesim
      Address=127.0.0.1
      Port=12345
 
