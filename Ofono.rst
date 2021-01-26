@@ -35,7 +35,9 @@ To set up ofono-phonesim for development:
 
      phonesim -p 12345 -gui /usr/share/phonesim/default.xml
 
-- from the oFono source directory, call ./test/enable-modem to bring the modem up, the control UI should come up
+  A bit surprisingly, at first nothing will happen. That is fine, since the UI will only be displayed once the virtual modem is activated.
+
+- from the oFono source directory, call ``./test/enable-modem`` to bring the modem up, the control UI should come up
 - call ``./test/online-modem`` to activate the test phonesim modem
 
 
