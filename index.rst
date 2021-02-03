@@ -32,7 +32,6 @@ that is open for the community to participate in.*"
 
    DevGuide
    AppDevelopment
-   PlasmaSettings
    RunningApps
    Porting
    Ofono
