@@ -128,28 +128,3 @@ select “plasma-mobile” as the user interface:
     * weston: (Wayland) Reference compositor (demo, not a phone interface)
     * xfce4: (X11) Lightweight GTK+2 desktop (stylus recommended)
     User interface [weston]: plasma-mobile
-
-Halium
-~~~~~~
-
-`Halium <https://halium.org/>`__ provides the minimal android layer that
-allows a non-Android graphical environment to interact with the
-underlying Android kernel and access the hardware. Currently Halium has
-been ported to many devices. The Plasma Mobile team provides a
-Neon-based rootfs which can be used along with the Halium builds. This
-image is based on the dev-unstable branch of KDE Neon, and always ships
-the latest versions of KDE frameworks, kwin and Plasma Mobile.
-
-.. attention:: If you want to install Plasma Mobile on Nexus 5X, please follow the `installation guide <Installation.html>`__.
-
-To run Plasma Mobile using Halium as hardware adaption layer:
-
--  Ensure that Halium has been
-   `ported <https://github.com/halium/projectmanagement/issues?q=is%3Aissue+is%3Aopen+label%3APorts>`__
-   to your device
--  Download the Neon-based rootfs
-   `image <https://www.plasma-mobile.org/get/>`__
--  Get the source
-   `manifest <https://github.com/halium/projectmanagement/issues?q=is%3Aissue+is%3Aopen+label%3APorts>`__
--  Follow the Halium documention `detailed
-   instructions <http://docs.halium.org/en/latest/>`__ to install Halium
